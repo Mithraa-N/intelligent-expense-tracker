@@ -38,12 +38,16 @@ export default function ReportModal({ isOpen, onClose, expenses, users, auth, cu
             })
         };
 
-        const currentExpenses = periods[activePeriod] || [];
-        const total = currentExpenses.reduce((acc, curr) => acc + curr.amount, 0);
+        const currentEntries = periods[activePeriod] || [];
+        const expensesOnly = currentEntries.filter(e => e.type === 'expense');
+        const incomeOnly = currentEntries.filter(e => e.type === 'income');
+
+        const totalExpense = expensesOnly.reduce((acc, curr) => acc + curr.amount, 0);
+        const totalIncome = incomeOnly.reduce((acc, curr) => acc + curr.amount, 0);
 
         // Group by category
         const categories = {};
-        currentExpenses.forEach(ex => {
+        expensesOnly.forEach(ex => {
             categories[ex.category] = (categories[ex.category] || 0) + ex.amount;
         });
 
@@ -51,7 +55,7 @@ export default function ReportModal({ isOpen, onClose, expenses, users, auth, cu
             .map(([name, amount]) => ({ name, amount }))
             .sort((a, b) => b.amount - a.amount);
 
-        return { total, categoryList, count: currentExpenses.length };
+        return { totalExpense, totalIncome, categoryList, count: currentEntries.length };
     }, [expenses, activePeriod]);
 
     const handleSendEmail = () => {
@@ -65,7 +69,7 @@ export default function ReportModal({ isOpen, onClose, expenses, users, auth, cu
     };
 
     const handleShare = async () => {
-        const text = `📊 Household Report (${activePeriod})\nTotal Spent: ${currencySymbol}${reportData.total.toFixed(2)}\nTop Category: ${reportData.categoryList[0]?.name || 'N/A'}\nGenerated for ${auth.email}`;
+        const text = `📊 Household Report (${activePeriod})\nNet Cashflow: ${currencySymbol}${(reportData.totalIncome - reportData.totalExpense).toFixed(2)}\nTotal Spent: ${currencySymbol}${reportData.totalExpense.toFixed(2)}\nGenerated for ${auth.email}`;
 
         if (navigator.share) {
             try {
@@ -144,17 +148,20 @@ export default function ReportModal({ isOpen, onClose, expenses, users, auth, cu
                 <div style={{ padding: '2rem', overflowY: 'auto', flex: 1 }}>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
                         <div className="glass" style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.03)', textAlign: 'center' }}>
-                            <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)', marginBottom: '0.5rem' }}>Total Spending</p>
-                            <h3 style={{ fontSize: '2rem', fontWeight: 800, color: 'white' }}>{currencySymbol}{reportData.total.toLocaleString()}</h3>
-                            <div style={{ marginTop: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', color: 'var(--success)', fontSize: '0.8rem' }}>
-                                <TrendingDown size={14} /> Efficient Spend
-                            </div>
+                            <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)', marginBottom: '0.5rem' }}>Total Spent</p>
+                            <h3 style={{ fontSize: '2rem', fontWeight: 800, color: '#f43f5e' }}>{currencySymbol}{reportData.totalExpense.toLocaleString()}</h3>
                         </div>
                         <div className="glass" style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.03)', textAlign: 'center' }}>
-                            <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)', marginBottom: '0.5rem' }}>Transactions</p>
-                            <h3 style={{ fontSize: '2rem', fontWeight: 800, color: 'white' }}>{reportData.count}</h3>
-                            <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)', marginTop: '0.5rem' }}>Audit Trail Entries</p>
+                            <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)', marginBottom: '0.5rem' }}>Total Income</p>
+                            <h3 style={{ fontSize: '2rem', fontWeight: 800, color: '#22c55e' }}>{currencySymbol}{reportData.totalIncome.toLocaleString()}</h3>
                         </div>
+                    </div>
+
+                    <div className="glass" style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.05)', marginBottom: '2rem', textAlign: 'center', border: '1px solid var(--border)' }}>
+                        <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>Net Cashflow</p>
+                        <h2 style={{ fontSize: '2.5rem', fontWeight: 900, color: (reportData.totalIncome - reportData.totalExpense) >= 0 ? 'var(--primary)' : 'var(--danger)' }}>
+                            {reportData.totalIncome >= reportData.totalExpense ? '+' : '-'}{currencySymbol}{Math.abs(reportData.totalIncome - reportData.totalExpense).toLocaleString()}
+                        </h2>
                     </div>
 
                     <h4 style={{ marginBottom: '1rem', fontSize: '1rem' }}>Category Breakdown</h4>
@@ -165,7 +172,7 @@ export default function ReportModal({ isOpen, onClose, expenses, users, auth, cu
                                 <div style={{ flex: 1, height: '8px', background: 'rgba(255,255,255,0.05)', borderRadius: '4px', overflow: 'hidden' }}>
                                     <motion.div
                                         initial={{ width: 0 }}
-                                        animate={{ width: `${(cat.amount / reportData.total) * 100}%` }}
+                                        animate={{ width: `${(cat.amount / (reportData.totalExpense || 1)) * 100}%` }}
                                         style={{ height: '100%', background: 'var(--primary)' }}
                                     />
                                 </div>
@@ -181,7 +188,7 @@ export default function ReportModal({ isOpen, onClose, expenses, users, auth, cu
                 <div style={{ padding: '2rem', borderTop: '1px solid var(--border)', background: 'rgba(0,0,0,0.2)', display: 'flex', gap: '1rem' }}>
                     <button
                         onClick={handleSendEmail}
-                        disabled={isSending || reportData.total === 0}
+                        disabled={isSending || (reportData.totalExpense === 0 && reportData.totalIncome === 0)}
                         style={{
                             flex: 1,
                             padding: '1rem',
@@ -204,7 +211,7 @@ export default function ReportModal({ isOpen, onClose, expenses, users, auth, cu
 
                     <button
                         onClick={handleShare}
-                        disabled={reportData.total === 0}
+                        disabled={reportData.totalExpense === 0 && reportData.totalIncome === 0}
                         style={{
                             padding: '1rem 1.5rem',
                             borderRadius: '14px',

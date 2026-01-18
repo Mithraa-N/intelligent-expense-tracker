@@ -69,16 +69,21 @@ const INITIAL_EXPENSES = [
   { id: 5, userId: 3, title: 'Uber Ride', amount: 25.00, category: 'Transport', date: '2026-01-07' },
 ];
 
-const CATEGORIES = {
-  Food: { icon: <Coffee />, color: '#f43f5e' },
-  Home: { icon: <Home />, color: '#6366f1' },
-  Utilities: { icon: <Zap />, color: '#f59e0b' },
-  Transport: { icon: <Car />, color: '#10b981' },
-  Medical: { icon: <HeartPulse />, color: '#ec4899' },
-  Other: { icon: <MoreHorizontal />, color: '#94a3b8' },
+const DEFAULT_CATEGORIES = {
+  Food: { icon: '☕', color: '#f43f5e' },
+  Home: { icon: '🏠', color: '#6366f1' },
+  Utilities: { icon: '⚡', color: '#f59e0b' },
+  Transport: { icon: '🚗', color: '#10b981' },
+  Medical: { icon: '🏥', color: '#ec4899' },
+  Income: { icon: '💰', color: '#22c55e' },
+  Other: { icon: '➕', color: '#94a3b8' },
 };
 
 function Dashboard({ auth, setAuth }) {
+  const [categories, setCategories] = useState(() => {
+    const saved = localStorage.getItem('sh_categories');
+    return saved ? JSON.parse(saved) : DEFAULT_CATEGORIES;
+  });
   const [users, setUsers] = useState(() => {
     const saved = localStorage.getItem('sh_users');
     const parsed = saved ? JSON.parse(saved) : INITIAL_USERS;
@@ -98,9 +103,18 @@ function Dashboard({ auth, setAuth }) {
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('manual');
   const [isProcessing, setIsProcessing] = useState(false);
+  const [editingExpense, setEditingExpense] = useState(null);
 
-  const [newExpense, setNewExpense] = useState({ title: '', amount: '', category: 'Food', date: new Date().toISOString().split('T')[0] });
+  const [newExpense, setNewExpense] = useState({
+    title: '',
+    amount: '',
+    category: 'Food',
+    date: new Date().toISOString().split('T')[0],
+    type: 'expense',
+    description: ''
+  });
   const [newUser, setNewUser] = useState({ name: '', salary: '' });
+  const [newCat, setNewCat] = useState({ name: '', icon: '📎', color: '#6366f1' });
 
   const fileInputRef = useRef(null);
   const ocrInputRef = useRef(null);
@@ -113,20 +127,35 @@ function Dashboard({ auth, setAuth }) {
     localStorage.setItem('sh_users', JSON.stringify(users));
   }, [users]);
 
-  const totalSpent = useMemo(() => expenses.reduce((acc, curr) => acc + curr.amount, 0), [expenses]);
+  useEffect(() => {
+    localStorage.setItem('sh_categories', JSON.stringify(categories));
+  }, [categories]);
+
+  const totalSpent = useMemo(() =>
+    expenses.filter(e => e.type === 'expense').reduce((acc, curr) => acc + curr.amount, 0),
+    [expenses]);
+
+  const totalIncome = useMemo(() =>
+    expenses.filter(e => e.type === 'income').reduce((acc, curr) => acc + curr.amount, 0),
+    [expenses]);
 
   const categoryData = useMemo(() => {
     const data = {};
-    expenses.forEach(ex => {
+    expenses.filter(e => e.type === 'expense').forEach(ex => {
       data[ex.category] = (data[ex.category] || 0) + ex.amount;
     });
-    return Object.keys(data).map(key => ({ name: key, value: data[key], fill: CATEGORIES[key]?.color || '#8884d8' }));
-  }, [expenses]);
+    return Object.keys(data).map(key => ({
+      name: key,
+      value: data[key],
+      fill: categories[key]?.color || '#8884d8'
+    }));
+  }, [expenses, categories]);
 
   const dailySpending = useMemo(() => {
     const data = {};
     expenses.forEach(ex => {
-      data[ex.date] = (data[ex.date] || 0) + ex.amount;
+      const val = ex.type === 'expense' ? -ex.amount : ex.amount;
+      data[ex.date] = (data[ex.date] || 0) + val;
     });
     return Object.keys(data).sort().map(date => ({ date, amount: data[date] }));
   }, [expenses]);
@@ -134,7 +163,9 @@ function Dashboard({ auth, setAuth }) {
   const userSpending = useMemo(() => {
     const data = users.map(u => ({
       ...u,
-      total: expenses.filter(e => e.userId === u.id).reduce((a, b) => a + b.amount, 0)
+      total: expenses
+        .filter(e => e.userId === u.id && e.type === 'expense')
+        .reduce((a, b) => a + b.amount, 0)
     }));
     return data;
   }, [expenses, users]);
@@ -214,15 +245,41 @@ function Dashboard({ auth, setAuth }) {
   const handleManualAdd = (e) => {
     e.preventDefault();
     if (!newExpense.title || !newExpense.amount) return;
-    const expense = {
-      ...newExpense,
-      id: Date.now(),
-      userId: currentUser.id,
-      amount: parseFloat(newExpense.amount)
-    };
-    setExpenses([expense, ...expenses]);
+
+    if (editingExpense) {
+      const updated = expenses.map(ex => ex.id === editingExpense.id ? {
+        ...newExpense,
+        id: editingExpense.id,
+        userId: currentUser.id,
+        amount: parseFloat(newExpense.amount)
+      } : ex);
+      setExpenses(updated);
+      setEditingExpense(null);
+    } else {
+      const expense = {
+        ...newExpense,
+        id: Date.now(),
+        userId: currentUser.id,
+        amount: parseFloat(newExpense.amount)
+      };
+      setExpenses([expense, ...expenses]);
+    }
+
     setIsAddModalOpen(false);
     resetForm();
+  };
+
+  const startEdit = (expense) => {
+    setEditingExpense(expense);
+    setNewExpense({
+      title: expense.title,
+      amount: expense.amount.toString(),
+      category: expense.category,
+      date: expense.date,
+      type: expense.type || 'expense',
+      description: expense.description || ''
+    });
+    setIsAddModalOpen(true);
   };
 
   const handleAddUser = (e) => {
@@ -248,8 +305,33 @@ function Dashboard({ auth, setAuth }) {
     }
   };
 
+  const handleAddCategory = (e) => {
+    e.preventDefault();
+    if (!newCat.name.trim()) return;
+    setCategories({
+      ...categories,
+      [newCat.name]: { icon: newCat.icon, color: newCat.color }
+    });
+    setNewCat({ name: '', icon: '📎', color: '#6366f1' });
+  };
+
+  const deleteCategory = (name) => {
+    if (Object.keys(categories).length <= 1) return alert("Must have at least one category.");
+    const next = { ...categories };
+    delete next[name];
+    setCategories(next);
+  };
+
   const resetForm = () => {
-    setNewExpense({ title: '', amount: '', category: 'Food', date: new Date().toISOString().split('T')[0] });
+    setNewExpense({
+      title: '',
+      amount: '',
+      category: 'Food',
+      date: new Date().toISOString().split('T')[0],
+      type: 'expense',
+      description: ''
+    });
+    setEditingExpense(null);
     setActiveTab('manual');
     setIsProcessing(false);
   };
@@ -425,25 +507,48 @@ function Dashboard({ auth, setAuth }) {
             </ResponsiveContainer>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
             <div className="glass" style={{ padding: '1.5rem' }}>
               <h3>Category Pressure</h3>
-              <ResponsiveContainer width="100%" height={180}>
+              <ResponsiveContainer width="100%" height={160}>
                 <BarChart data={categoryData}>
                   <XAxis dataKey="name" hide />
                   <Tooltip contentStyle={{ background: 'var(--bg-dark)', border: 'none' }} />
-                  <Bar dataKey="value">
+                  <Bar dataKey="value" radius={[4, 4, 0, 0]}>
                     {categoryData.map((e, i) => <Cell key={i} fill={e.fill} />)}
                   </Bar>
                 </BarChart>
               </ResponsiveContainer>
             </div>
-            <div className="glass" style={{ padding: '1.5rem', textAlign: 'center' }}>
-              <TrendingUp size={32} color="var(--success)" style={{ marginBottom: '0.5rem' }} />
-              <h3>Efficiency Score</h3>
-              <p style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--success)' }}>84%</p>
-              <p style={{ fontSize: '0.7rem', color: 'var(--text-dim)' }}>Saving more than 60% of similar households</p>
+            <div className="glass" style={{ padding: '1.5rem' }}>
+              <h3>Savings Snapshot</h3>
+              <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ color: 'var(--text-dim)', fontSize: '0.85rem' }}>Total Income</span>
+                  <span style={{ color: '#22c55e', fontWeight: 700 }}>{currencySymbol}{totalIncome.toFixed(2)}</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ color: 'var(--text-dim)', fontSize: '0.85rem' }}>Total Expenses</span>
+                  <span style={{ color: '#f43f5e', fontWeight: 700 }}>{currencySymbol}{totalSpent.toFixed(2)}</span>
+                </div>
+                <div style={{ height: '1px', background: 'var(--border)' }}></div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>Net Balance</span>
+                  <span style={{ color: (totalIncome - totalSpent) >= 0 ? 'var(--primary)' : '#f43f5e', fontWeight: 800 }}>
+                    {currencySymbol}{(totalIncome - totalSpent).toFixed(2)}
+                  </span>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <div className="glass" style={{ padding: '1.5rem', textAlign: 'center' }}>
+            <TrendingUp size={32} color="var(--success)" style={{ marginBottom: '0.5rem' }} />
+            <h3>Efficiency Score</h3>
+            <p style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--success)' }}>
+              {totalIncome > 0 ? Math.round(((totalIncome - totalSpent) / totalIncome) * 100) : 0}%
+            </p>
+            <p style={{ fontSize: '0.7rem', color: 'var(--text-dim)' }}>Savings rate relative to all inflows</p>
           </div>
         </main>
 
@@ -462,8 +567,13 @@ function Dashboard({ auth, setAuth }) {
                       <p style={{ fontSize: '0.65rem', color: 'var(--text-dim)' }}>{ex.category} • {user?.name.split(' ')[0]}</p>
                     </div>
                     <div style={{ textAlign: 'right' }}>
-                      <p style={{ fontWeight: 700, fontSize: '0.85rem' }}>-{currencySymbol}{ex.amount.toFixed(2)}</p>
-                      <button onClick={() => deleteExpense(ex.id)} style={{ background: 'none', border: 'none', color: 'var(--danger)', cursor: 'pointer', fontSize: '0.7rem' }}>Delete</button>
+                      <p style={{ fontWeight: 700, fontSize: '0.85rem', color: ex.type === 'income' ? 'var(--success)' : 'white' }}>
+                        {ex.type === 'income' ? '+' : '-'}{currencySymbol}{ex.amount.toFixed(2)}
+                      </p>
+                      <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end' }}>
+                        <button onClick={() => startEdit(ex)} style={{ background: 'none', border: 'none', color: 'var(--primary)', cursor: 'pointer', fontSize: '0.7rem' }}>Edit</button>
+                        <button onClick={() => deleteExpense(ex.id)} style={{ background: 'none', border: 'none', color: 'var(--danger)', cursor: 'pointer', fontSize: '0.7rem' }}>Delete</button>
+                      </div>
                     </div>
                   </div>
                 );
@@ -487,15 +597,46 @@ function Dashboard({ auth, setAuth }) {
                 <button onClick={() => setIsAddModalOpen(false)} style={{ position: 'absolute', top: '13rem', right: '2rem', border: 'none', background: 'none', color: 'white', cursor: 'pointer' }}><X size={20} /></button>
                 {activeTab === 'manual' && (
                   <form onSubmit={handleManualAdd}>
-                    <h3 style={{ marginBottom: '1rem' }}>Entry for {currentUser.name}</h3>
-                    <input placeholder="Title" value={newExpense.title} onChange={e => setNewExpense({ ...newExpense, title: e.target.value })} style={{ width: '100%', padding: '0.8rem', marginBottom: '1rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', color: 'white' }} />
+                    <h3 style={{ marginBottom: '1rem' }}>{editingExpense ? 'Edit Entry' : `New Entry for ${currentUser.name}`}</h3>
+
+                    <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem', background: 'rgba(255,255,255,0.05)', padding: '0.3rem', borderRadius: '10px' }}>
+                      {['expense', 'income'].map(type => (
+                        <button
+                          key={type}
+                          type="button"
+                          onClick={() => setNewExpense({ ...newExpense, type })}
+                          style={{
+                            flex: 1, padding: '0.5rem', border: 'none', borderRadius: '8px',
+                            background: newExpense.type === type ? 'var(--primary)' : 'transparent',
+                            color: 'white', cursor: 'pointer', fontSize: '0.8rem', fontWeight: 600
+                          }}
+                        >
+                          {type.toUpperCase()}
+                        </button>
+                      ))}
+                    </div>
+
+                    <input placeholder="Title / Payee" value={newExpense.title} onChange={e => setNewExpense({ ...newExpense, title: e.target.value })} style={{ width: '100%', padding: '0.8rem', marginBottom: '1rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', color: 'white' }} />
+
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                       <input type="number" placeholder={`Amount (${currencySymbol})`} value={newExpense.amount} onChange={e => setNewExpense({ ...newExpense, amount: e.target.value })} style={{ width: '100%', padding: '0.8rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', color: 'white' }} />
                       <select value={newExpense.category} onChange={e => setNewExpense({ ...newExpense, category: e.target.value })} style={{ width: '100%', padding: '0.8rem', borderRadius: '8px', background: 'rgba(255,255,255,0.1)', border: '1px solid var(--border)', color: 'white' }}>
-                        {Object.keys(CATEGORIES).map(c => <option key={c} value={c}>{c}</option>)}
+                        {Object.keys(categories).map(c => <option key={c} value={c}>{c}</option>)}
                       </select>
                     </div>
-                    <button type="submit" style={{ width: '100%', padding: '1rem', borderRadius: '8px', background: 'var(--primary)', border: 'none', color: 'white', fontWeight: 600 }}>Save Expense</button>
+
+                    <input type="date" value={newExpense.date} onChange={e => setNewExpense({ ...newExpense, date: e.target.value })} style={{ width: '100%', padding: '0.8rem', marginBottom: '1rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', color: 'white' }} />
+
+                    <textarea
+                      placeholder="Description (Optional)"
+                      value={newExpense.description}
+                      onChange={e => setNewExpense({ ...newExpense, description: e.target.value })}
+                      style={{ width: '100%', padding: '0.8rem', marginBottom: '1rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', color: 'white', resize: 'none', height: '80px' }}
+                    />
+
+                    <button type="submit" style={{ width: '100%', padding: '1rem', borderRadius: '8px', background: 'var(--primary)', border: 'none', color: 'white', fontWeight: 600 }}>
+                      {editingExpense ? 'Update Transaction' : 'Save Transaction'}
+                    </button>
                   </form>
                 )}
                 {activeTab === 'excel' && (
@@ -544,12 +685,34 @@ function Dashboard({ auth, setAuth }) {
                 ))}
               </div>
 
-              <h4 style={{ marginBottom: '1rem', fontSize: '0.9rem' }}>Add New Member</h4>
-              <form onSubmit={handleAddUser} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <h4 style={{ marginTop: '2rem', marginBottom: '1rem', fontSize: '0.9rem' }}>Add New Member</h4>
+              <form onSubmit={handleAddUser} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', borderBottom: '1px solid var(--border)', paddingBottom: '2rem', marginBottom: '2rem' }}>
                 <input placeholder="Full Name" value={newUser.name} onChange={e => setNewUser({ ...newUser, name: e.target.value })} style={{ width: '100%', padding: '0.8rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', color: 'white' }} />
                 <input type="number" placeholder={`Monthly Salary (${currencySymbol})`} value={newUser.salary} onChange={e => setNewUser({ ...newUser, salary: e.target.value })} style={{ width: '100%', padding: '0.8rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', color: 'white' }} />
                 <button type="submit" style={{ width: '100%', padding: '0.8rem', background: 'linear-gradient(135deg, var(--primary), var(--accent))', border: 'none', borderRadius: '8px', color: 'white', fontWeight: 600, cursor: 'pointer' }}>Add Member</button>
               </form>
+
+              <h3 style={{ marginBottom: '1.5rem', fontSize: '1.1rem' }}>Category Settings</h3>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 1fr))', gap: '0.8rem', marginBottom: '2rem' }}>
+                {Object.entries(categories).map(([name, cat]) => (
+                  <div key={name} style={{ position: 'relative', padding: '1rem', borderRadius: '12px', background: 'rgba(255,255,255,0.03)', border: `1px solid ${cat.color}44`, textAlign: 'center' }}>
+                    <span style={{ fontSize: '1.5rem', display: 'block' }}>{cat.icon}</span>
+                    <span style={{ fontSize: '0.7rem', display: 'block', marginTop: '0.3rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{name}</span>
+                    <button onClick={() => deleteCategory(name)} style={{ position: 'absolute', top: '-5px', right: '-5px', width: '20px', height: '20px', borderRadius: '50%', background: 'var(--danger)', color: 'white', border: 'none', fontSize: '0.6rem', cursor: 'pointer' }}>×</button>
+                  </div>
+                ))}
+              </div>
+
+              <h4 style={{ marginBottom: '1rem', fontSize: '0.9rem' }}>Add Custom Category</h4>
+              <form onSubmit={handleAddCategory} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                  <input placeholder="Cat Name" value={newCat.name} onChange={e => setNewCat({ ...newCat, name: e.target.value })} style={{ width: '100%', padding: '0.8rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', color: 'white' }} />
+                  <input placeholder="Emoji Icon" value={newCat.icon} onChange={e => setNewCat({ ...newCat, icon: e.target.value })} style={{ width: '100%', padding: '0.8rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', color: 'white' }} />
+                </div>
+                <input type="color" value={newCat.color} onChange={e => setNewCat({ ...newCat, color: e.target.value })} style={{ width: '100%', padding: '0.8rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', height: '100%' }} />
+                <button type="submit" style={{ width: '100%', padding: '0.8rem', background: 'rgba(255,255,255,0.1)', border: '1px solid var(--border)', borderRadius: '8px', color: 'white', fontWeight: 600, cursor: 'pointer' }}>Save Category</button>
+              </form>
+
               <button onClick={() => setIsUserModalOpen(false)} style={{ width: '100%', marginTop: '1.5rem', background: 'none', border: 'none', color: 'var(--text-dim)', cursor: 'pointer', fontSize: '0.8rem' }}>Close Management Hub</button>
             </motion.div>
           </div>
