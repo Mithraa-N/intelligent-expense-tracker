@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "amount": 5.50,
+        "category": "Food",
+        "description": "Starbucks Coffee",
+        "date": "2026-01-08"
+    },
+    {
+        "id": 2,
+        "amount": 120.00,
+        "category": "Food",
+        "description": "Grocery Store",
+        "date": "2026-01-08"
+    }
+]

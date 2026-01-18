@@ -1,0 +1,101 @@
+id,description,amount,category,date
+1,Elec Bill - Jan,241.97,Utilities,"Dec 14, 2025"
+2,UBER   123,244.16,Entertainment,12-02-2025
+3,Strbucks cofee,272.94,Food,05/01/2026
+4,Coffee!!,97.49,Food,12-04-2025
+5,UBER   123,226.26,Health,01-02-2026
+6,Elec Bill - Jan,280.59,Shopping,2026-01-05
+7,uber   123,375.53,Entertainment,08/01/2026
+8,uberrr,406.3,Transport,2026-01-14
+9,Uber ridee,460.08,Entertainment,2025-12-17
+10,coffee!!,124.09,Shopping,12-23-2025
+11,coffee!!,128.49,Shopping,31/12/2025
+12,movie night,284.57,Transport,2025-12-23
+13,Electcity  bill,20.99,Health,2026-01-07
+14,Walmrt grocceries,117.26,Health,"Dec 15, 2025"
+15,Coffee!!,170.8,Entertainment,2025-12-31
+16,NETFLIX.COM,288.26,Transport,04/12/2025
+17,uberrr,452.5,Shopping,23/12/2025
+18,wal-mart #456,322.96,Shopping,2026-01-13
+19,Coffee!!,298.72,Utilities,12-28-2025
+20,Coffee!!,118.1,Food,07/01/2026
+21,UBER      123,303.3,Food,"Dec 09, 2025"
+22,Elec Bill - Jan,421.7,Utilities,2025-12-19
+23,Amzon prime sub,369.45,Entertainment,"Dec 24, 2025"
+24,bill  for  power,402.24,Shopping,2026-01-11
+25,Elec  Bill  -  Jan,65.84,Utilities,10/12/2025
+26,Elec Bill - Jan,310.76,Food,2025-12-22
+27,bill for power,212.29,Health,10/01/2026
+28,sttarbucks,253.41,Health,06/01/2026
+29,sttarbucks,110.17,Entertainment,2026-01-13
+30,bill for power,405.11,Food,"Jan 07, 2026"
+31,elec bill - jan,288.09,Food,"Jan 13, 2026"
+32,Amazon.com*123,141.38,Utilities,01-02-2026
+33,Coffee!!,316.51,Health,07/01/2026
+34,Strbucks cofee,336.39,Entertainment,12-16-2025
+35,Pfizer meds,357.32,Entertainment,"Dec 10, 2025"
+36,Strbucks cofee,299.85,Transport,"Dec 28, 2025"
+37,amazon.com*123,352.02,Transport,20/12/2025
+38,meds...,492.3,Utilities,05/12/2025
+39,Walmrt grocceries,27.45,Food,2025-12-10
+40,uberrr,200.94,Health,2025-12-18
+41,Electcity bill,38.66,Food,05/01/2026
+42,strbucks cofee,248.68,Entertainment,20/12/2025
+43,Coffee!!,150.05,Utilities,"Jan 12, 2026"
+44,meds...,252.97,Food,"Dec 03, 2025"
+45,UBER   123,204.16,Food,2025-12-07
+46,uber   123,477.67,Shopping,05/01/2026
+47,Walmrt grocceries,73.21,Food,2025-12-07
+48,uber ridee,447.79,Shopping,"Jan 08, 2026"
+49,walmrt grocceries,373.12,Health,19/12/2025
+50,Electcity bill,82.88,Entertainment,09/01/2026
+51,movie night,288.15,Utilities,12-21-2025
+52,Amazon.com*123,39.16,Health,2025-12-11
+53,movie night,379.35,Food,15/01/2026
+54,grocery store,35.13,Transport,"Jan 05, 2026"
+55,uberrr,384.88,Entertainment,2025-12-27
+56,Elec Bill - Jan,349.67,Food,"Jan 06, 2026"
+57,uberrr,377.4,Transport,01-02-2026
+58,Elec Bill - Jan,296.89,Health,2025-12-28
+59,UBER   123,41.28,Shopping,2025-12-16
+60,Netflix subscription,46.88,Transport,25/12/2025
+61,Walmrt grocceries,137.75,Utilities,2026-01-11
+62,Netflix subscription,155.32,Utilities,"Dec 17, 2025"
+63,Elec Bill - Jan,470.54,Food,12-09-2025
+64,uberrr,318.1,Shopping,2025-12-19
+65,sttarbucks,364.56,Food,"Dec 20, 2025"
+66,movie night,319.19,Entertainment,17/12/2025
+67,uberrr,208.98,Shopping,"Dec 01, 2025"
+68,Walmrt grocceries,8.05,Transport,19/12/2025
+69,Electcity bill,5.56,Entertainment,"Dec 21, 2025"
+70,movie night,332.95,Food,27/12/2025
+71,Coffee!!,156.93,Utilities,"Dec 12, 2025"
+72,Amzon prime sub,80.19,Food,"Jan 02, 2026"
+73,Walmrt grocceries,409.5,Health,"Dec 12, 2025"
+74,Pfizer meds,174.86,Transport,23/12/2025
+75,WAL-MART #456,55.98,Utilities,2026-01-04
+76,coffee!!,317.71,Transport,01-08-2026
+77,sttarbucks,367.11,Health,2025-12-04
+78,Electcity bill,405.44,Shopping,"Dec 10, 2025"
+79,Pfizer meds,234.69,Utilities,"Jan 07, 2026"
+80,uberrr,380.66,Entertainment,2025-12-05
+81,pharmacy - CVS,415.46,Utilities,12-07-2025
+82,pharmacy - CVS,224.77,Health,2026-01-06
+83,meds...,54.33,Entertainment,11/12/2025
+84,pfizer meds,344.19,Food,12-02-2025
+85,WAL-MART #456,75.84,Health,07/12/2025
+86,sttarbucks,423.49,Transport,2025-12-25
+87,electcity bill,271.05,Entertainment,2025-12-01
+88,Walmrt grocceries,331.92,Transport,"Dec 15, 2025"
+89,bill for power,188.81,Shopping,2025-12-20
+90,Pfizer meds,325.88,Food,01-15-2026
+91,uberrr,243.85,Utilities,"Dec 03, 2025"
+92,Uber ridee,300.84,Health,15/12/2025
+93,strbucks cofee,5.33,Utilities,2025-12-20
+94,Coffee!!,141.93,Food,12-05-2025
+95,NETFLIX.COM,53.45,Utilities,01-05-2026
+96,Amazon.com*123,390.2,Health,12-21-2025
+97,movie night,282.59,Food,"Dec 05, 2025"
+98,WAL-MART #456,37.99,Transport,"Dec 07, 2025"
+99,Strbucks cofee,472.83,Health,01-07-2026
+100,Pfizer meds,394.32,Entertainment,2025-12-14

@@ -1,16 +1,45 @@
-# React + Vite
+# Intelligent Expense Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, ML-powered expense tracking application with a FastAPI backend and a React frontend.
 
-Currently, two official plugins are available:
+## Architecture
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project follows an **ML-first architecture** designed for scalability and intelligence:
 
-## React Compiler
+-   **/api**: Contains FastAPI route definitions and request/response handling.
+-   **/ml**: Housing for machine learning models, predictors, and data analysis logic.
+-   **/services**: Core business logic and database interaction services.
+-   **/data**: Data schemas (Pydantic models) and data storage configurations.
+-   **/src**: The React + Vite frontend application.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the ESLint configuration
+### Backend
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Install Python dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Start the FastAPI server:
+   ```bash
+   python main.py
+   ```
+   The API will be available at `http://localhost:8000`.
+
+### Frontend
+
+1. Install Node dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the Vite development server:
+   ```bash
+   npm run dev
+   ```
+
+## Features
+
+- **Transaction CRUD**: Full management of income and expenses.
+- **ML Analysis**: Intelligent spending breakdown and category-wise analysis.
+- **Responsive UI**: A sleek, modern dashboard for financial monitoring.
+

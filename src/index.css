@@ -34,7 +34,10 @@ body {
   min-height: 100vh;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: 'Outfit', sans-serif;
   font-weight: 700;
 }
@@ -74,8 +77,15 @@ h1, h2, h3, h4 {
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {
@@ -89,17 +99,37 @@ h1, h2, h3, h4 {
   gap: 1.5rem;
 }
 
-.col-sidebar { grid-column: span 3; }
-.col-main { grid-column: span 6; }
-.col-right { grid-column: span 3; }
+.col-sidebar {
+  grid-column: span 3;
+}
+
+.col-main {
+  grid-column: span 6;
+}
+
+.col-right {
+  grid-column: span 3;
+}
 
 @media (max-width: 1024px) {
-  .col-sidebar, .col-right { grid-column: span 4; }
-  .col-main { grid-column: span 8; }
+
+  .col-sidebar,
+  .col-right {
+    grid-column: span 4;
+  }
+
+  .col-main {
+    grid-column: span 8;
+  }
 }
 
 @media (max-width: 768px) {
-  .col-sidebar, .col-main, .col-right { grid-column: span 12; }
+
+  .col-sidebar,
+  .col-main,
+  .col-right {
+    grid-column: span 12;
+  }
 }
 
 /* Tooltips & Modals */
@@ -112,4 +142,18 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@keyframes spin {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
 }

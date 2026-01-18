@@ -98,6 +98,9 @@ function Dashboard({ auth, setAuth }) {
     return saved ? JSON.parse(saved) : INITIAL_EXPENSES;
   });
 
+  const [smartInput, setSmartInput] = useState('');
+  const [isParsing, setIsParsing] = useState(false);
+
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [isUserModalOpen, setIsUserModalOpen] = useState(false);
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
@@ -392,6 +395,36 @@ function Dashboard({ auth, setAuth }) {
     setAuth(null);
   };
 
+  const handleSmartAdd = async (e) => {
+    if (e.key !== 'Enter' || !smartInput.trim()) return;
+    setIsParsing(true);
+    try {
+      const resp = await fetch(`http://localhost:8000/api/v1/ml/parse?text=${encodeURIComponent(smartInput)}`, {
+        method: 'POST'
+      });
+      const data = await resp.json();
+
+      if (data.amount) {
+        const expense = {
+          id: Date.now(),
+          userId: currentUser.id,
+          title: data.description || 'Quick Expense',
+          amount: data.amount,
+          category: 'Other', // Model could predict this next
+          date: data.date,
+          type: 'expense'
+        };
+        setExpenses([expense, ...expenses]);
+        setSmartInput('');
+        // Show subtle success feedback
+      }
+    } catch (err) {
+      console.error("Smart Add failed", err);
+    } finally {
+      setIsParsing(false);
+    }
+  };
+
   return (
     <div className="container">
       {/* Header & User Switcher */}
@@ -446,6 +479,31 @@ function Dashboard({ auth, setAuth }) {
             >
               <Plus size={20} />
             </button>
+          </div>
+        </div>
+
+        {/* Smart Add Bar */}
+        <div style={{ marginBottom: '2rem', display: 'flex', gap: '1rem', alignItems: 'center' }}>
+          <div style={{ flex: 1, position: 'relative' }}>
+            <Sparkles size={16} style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--accent)' }} />
+            <input
+              placeholder="Quick Add: 'Spent ₹250 on lunch yesterday'..."
+              value={smartInput}
+              onChange={e => setSmartInput(e.target.value)}
+              onKeyDown={handleSmartAdd}
+              disabled={isParsing}
+              style={{
+                width: '100%',
+                padding: '1rem 1rem 1rem 3rem',
+                borderRadius: '16px',
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid var(--border)',
+                color: 'white',
+                fontSize: '0.9rem',
+                transition: 'all 0.3s'
+              }}
+            />
+            {isParsing && <Loader2 size={16} className="spin" style={{ position: 'absolute', right: '1rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--accent)' }} />}
           </div>
         </div>
       </header>
