@@ -63,7 +63,14 @@ class ExpenseParser:
         # Remove multiple spaces and strip
         clean_desc = " ".join(clean_desc.split())
         
-        result["description"] = clean_desc if clean_desc else text.strip()
+        description = clean_desc if clean_desc else text.strip()
+        result["description"] = description
+        
+        # 4. Predict Category
+        from ml.predictor import ExpenseML
+        prediction = ExpenseML.predict_category(description)
+        result["category"] = prediction.get("category", "Uncategorized")
+        result["confidence"] = prediction.get("confidence", 0.0)
         
         return result
 

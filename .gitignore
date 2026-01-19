@@ -22,3 +22,18 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# Data & Models
+data/*.csv
+!data/sample_expenses.json
+ml/*.pkl
+ml/reports/
+ml/advanced/

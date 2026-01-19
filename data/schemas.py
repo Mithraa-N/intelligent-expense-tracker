@@ -8,8 +8,11 @@ class ExpenseBase(BaseModel):
     description: str
     date: date
 
-class ExpenseCreate(ExpenseBase):
-    pass
+class ExpenseCreate(BaseModel):
+    amount: float
+    category: Optional[str] = None
+    description: str
+    date: date
 
 class Expense(ExpenseBase):
     id: int

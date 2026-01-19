@@ -45,6 +45,7 @@ import Tesseract from 'tesseract.js';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './components/Login';
 import ReportModal from './components/ReportModal';
+import { api } from './api';
 
 const CURRENCY_SYMBOLS = {
   USD: '$',
@@ -100,6 +101,9 @@ function Dashboard({ auth, setAuth }) {
 
   const [smartInput, setSmartInput] = useState('');
   const [isParsing, setIsParsing] = useState(false);
+  const [aiInsights, setAiInsights] = useState([]);
+  const [anomalies, setAnomalies] = useState([]);
+  const [forecast, setForecast] = useState(null);
 
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [isUserModalOpen, setIsUserModalOpen] = useState(false);
@@ -133,6 +137,28 @@ function Dashboard({ auth, setAuth }) {
   useEffect(() => {
     localStorage.setItem('sh_categories', JSON.stringify(categories));
   }, [categories]);
+
+  // Fetch AI Insights whenever expenses change
+  useEffect(() => {
+    if (!auth) return;
+
+    const fetchAIData = async () => {
+      try {
+        const [insightsRes, anomaliesRes, forecastRes] = await Promise.all([
+          api.getInsights(),
+          api.getAnomalies(),
+          api.getForecast(30)
+        ]);
+        setAiInsights(insightsRes);
+        setAnomalies(anomaliesRes);
+        setForecast(forecastRes);
+      } catch (err) {
+        console.error("Failed to fetch AI data", err);
+      }
+    };
+
+    fetchAIData();
+  }, [expenses, auth]);
 
   const totalSpent = useMemo(() =>
     expenses.filter(e => e.type === 'expense').reduce((acc, curr) => acc + curr.amount, 0),
@@ -173,77 +199,27 @@ function Dashboard({ auth, setAuth }) {
     return data;
   }, [expenses, users]);
 
-  const generateTips = () => {
-    const tips = [];
-    const foodSpend = expenses.filter(e => e.category === 'Food').reduce((a, b) => a + b.amount, 0);
-    const utilitySpend = expenses.filter(e => e.category === 'Utilities').reduce((a, b) => a + b.amount, 0);
+  const tips = useMemo(() => {
+    // Combine local rules with AI insights
+    const combined = [...aiInsights.map(insight => ({
+      title: insight.title,
+      desc: insight.message,
+      severity: insight.priority === 'high' ? 'danger' : insight.priority === 'medium' ? 'warning' : 'info',
+      action: insight.type === 'anomaly_alert' ? 'Verify' : insight.type === 'saving_tip' ? 'Optimize' : 'View'
+    }))];
 
-    // Dynamic Expenditure Minimization Tips
-    if (foodSpend > totalSpent * 0.25) {
-      tips.push({
-        title: 'Food Budget Optimization',
-        desc: `Your food spend is ${Math.round((foodSpend / totalSpent) * 100)}% of total. Switch to meal-planning to save ~$150/mo.`,
-        severity: 'warning',
-        action: 'Switch to Store Brands'
-      });
-    }
-
-    // Salary-based "Way to Spend" Insights
-    const totalHouseholdSalary = users.reduce((acc, u) => acc + (u.salary || 0), 0);
-    const householdSavingsTarget = totalHouseholdSalary * 0.2;
-    const currentSavingsPotential = totalHouseholdSalary - totalSpent;
-
-    if (currentSavingsPotential > 0) {
-      tips.push({
-        title: 'Expenditure Strategy',
-        desc: `You have ${currencySymbol}${currentSavingsPotential.toFixed(0)} remaining. Goal: Put ${currencySymbol}${householdSavingsTarget.toFixed(0)} (20%) into high-yield savings.`,
-        severity: 'success',
-        action: 'Move to Savings'
-      });
-    } else {
-      tips.push({
-        title: 'Budget Deficit Alert',
-        desc: `Expenses exceed total household income by ${currencySymbol}${Math.abs(currentSavingsPotential).toFixed(0)}.`,
-        severity: 'danger',
-        action: 'Review Large Bills'
-      });
-    }
-
-    if (utilitySpend > 200) {
-      tips.push({
-        title: 'Energy Mini-Audit',
-        desc: 'Electricity bill is high. Unplugging devices at night can save 5-10% on utilities.',
+    // Fallback if AI hasn't loaded yet or has few entries
+    if (combined.length === 0) {
+      combined.push({
+        title: 'Intelligence Ready',
+        desc: 'Keep adding expenses to unlock deeper AI insights.',
         severity: 'info',
-        action: 'Unplug Standby Devices'
+        action: 'Got it'
       });
     }
 
-    // Individual User Behavioral Tips
-    const usersWithTotal = userSpending.filter(u => u.total > 0);
-    const highSpender = usersWithTotal.length > 0
-      ? usersWithTotal.reduce((prev, current) => (prev.total > current.total) ? prev : current)
-      : null;
-
-    if (highSpender && totalSpent > 0 && highSpender.total > totalSpent * 0.5) {
-      tips.push({
-        title: `${highSpender.name}'s Spending Alert`,
-        desc: `${highSpender.name} accounts for ${Math.round((highSpender.total / totalSpent) * 100)}% of household cost.`,
-        severity: 'danger',
-        action: 'Suggest Limit'
-      });
-    }
-
-    if (expenses.length > 5) {
-      tips.push({
-        title: 'Expenditure Minimizer',
-        desc: 'Consider a "No-Spend Weekend" to cut impulse transport costs by up to 15%.',
-        severity: 'success',
-        action: 'Plan No-Spend Days'
-      });
-    }
-
-    return tips;
-  };
+    return combined;
+  }, [aiInsights]);
 
   const handleManualAdd = (e) => {
     e.preventDefault();
@@ -399,10 +375,7 @@ function Dashboard({ auth, setAuth }) {
     if (e.key !== 'Enter' || !smartInput.trim()) return;
     setIsParsing(true);
     try {
-      const resp = await fetch(`http://localhost:8000/api/v1/ml/parse?text=${encodeURIComponent(smartInput)}`, {
-        method: 'POST'
-      });
-      const data = await resp.json();
+      const data = await api.parseText(smartInput);
 
       if (data.amount) {
         const expense = {
@@ -410,13 +383,12 @@ function Dashboard({ auth, setAuth }) {
           userId: currentUser.id,
           title: data.description || 'Quick Expense',
           amount: data.amount,
-          category: 'Other', // Model could predict this next
+          category: data.category || 'Other',
           date: data.date,
           type: 'expense'
         };
         setExpenses([expense, ...expenses]);
         setSmartInput('');
-        // Show subtle success feedback
       }
     } catch (err) {
       console.error("Smart Add failed", err);
@@ -531,15 +503,17 @@ function Dashboard({ auth, setAuth }) {
           <div className="glass" style={{ padding: '1.5rem' }}>
             <h3 style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Sparkles size={18} color="var(--accent)" /> Minimization Tips</h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              {generateTips().map((tip, i) => (
-                <div key={i} style={{ padding: '1rem', borderRadius: '16px', background: `rgba(${tip.severity === 'warning' ? '245, 158, 11' : tip.severity === 'danger' ? '239, 68, 68' : '34, 197, 94'}, 0.08)`, borderLeft: `4px solid var(--${tip.severity === 'info' ? 'primary' : tip.severity})` }}>
-                  <h4 style={{ fontSize: '0.85rem', marginBottom: '0.25rem' }}>{tip.title}</h4>
-                  <p style={{ fontSize: '0.75rem', color: 'var(--text-dim)', lineHeight: 1.4 }}>{tip.desc}</p>
-                  <button style={{ marginTop: '0.75rem', width: '100%', padding: '0.4rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', color: 'white', fontSize: '0.7rem', cursor: 'pointer' }}>
-                    {tip.action}
-                  </button>
-                </div>
-              ))}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                {tips.map((tip, i) => (
+                  <div key={i} style={{ padding: '1rem', borderRadius: '16px', background: `rgba(${tip.severity === 'warning' ? '245, 158, 11' : tip.severity === 'danger' ? '239, 68, 68' : '34, 197, 94'}, 0.08)`, borderLeft: `4px solid var(--${tip.severity === 'info' ? 'primary' : tip.severity})` }}>
+                    <h4 style={{ fontSize: '0.85rem', marginBottom: '0.25rem' }}>{tip.title}</h4>
+                    <p style={{ fontSize: '0.75rem', color: 'var(--text-dim)', lineHeight: 1.4 }}>{tip.desc}</p>
+                    <button style={{ marginTop: '0.75rem', width: '100%', padding: '0.4rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)', color: 'white', fontSize: '0.7rem', cursor: 'pointer' }}>
+                      {tip.action}
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </aside>
