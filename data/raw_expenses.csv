@@ -1,501 +1,501 @@
 id,description,amount,category,date
-1,uber ridee,16.45,Transport,"Dec 23, 2025"
-2,walmrt grocceries,47.18,Shopping,2025-12-18
-3,pharmacy  -  CVS,429.6,Health,24/12/2025
-4,Hospital bill,325.01,Health,22/12/2025
-5,target store,241.97,Shopping,2025-12-15
-6,Lunch at MCD,107.85,Food,"Jan 04, 2026"
-7,Lunch at MCD,296.72,Food,2025-12-24
-8,target store,490.92,Shopping,"Dec 09, 2025"
-9,target store,193.87,Shopping,2026-01-15
-10,train pass,221.86,Transport,13/01/2026
-11,strbucks cofee,281.21,Food,2025-12-01
-12,Pfizer meds,409.52,Health,"Dec 18, 2025"
-13,meds...,224.7,Health,2025-12-19
-14,bill for power,372.34,Utilities,2026-01-07
-15,Coffee!!,301.71,Food,11/01/2026
-16,internet comcast,45.37,Utilities,2025-12-02
-17,Mobile  recharge,106.59,Utilities,08/12/2025
-18,Steam games,246.1,Entertainment,08/12/2025
-19,Hospital bill,234.01,Health,2026-01-01
-20,Netflix subscription,67.67,Entertainment,11/01/2026
-21,Hospital bill,398.01,Health,12-10-2025
-22,bill for power,445.01,Utilities,"Dec 17, 2025"
-23,Groceries,29.82,Food,12-31-2025
-24,Coffee!!,223.36,Food,2025-12-02
-25,groceries,362.64,Food,12-03-2025
-26,Dinner at Palace,318.99,Food,"Jan 10, 2026"
-27,netflix subscription,433.88,Entertainment,2026-01-08
-28,cinema tickets,398.86,Entertainment,2025-12-19
-29,Coffee!!,434.12,Food,12-17-2025
-30,train pass,153.74,Transport,08/01/2026
-31,Netflix  subscription,263.27,Entertainment,22/12/2025
-32,Doctor visit,274.0,Health,"Jan 12, 2026"
-33,sttarbucks,288.22,Food,2025-12-31
-34,Gym membership,94.49,Health,12-25-2025
-35,Doctor visit,231.68,Health,01-14-2026
-36,Train pass,418.6,Transport,"Dec 24, 2025"
-37,Gym membership,276.26,Health,01-08-2026
-38,Netflix subscription,237.65,Entertainment,12-29-2025
-39,Bus ticket,217.07,Transport,07/12/2025
-40,Petrol refill,91.54,Transport,03/12/2025
-41,Lunch at MCD,451.34,Food,12-12-2025
-42,Amzon prime sub,327.77,Shopping,2025-12-05
-43,amzn mktp,460.72,Shopping,"Dec 01, 2025"
-44,amazon.com*123,69.67,Shopping,"Jan 13, 2026"
-45,Doctor visit,138.97,Health,15/12/2025
-46,sttarbucks,37.93,Food,01-11-2026
-47,Electcity bill,253.64,Utilities,02/12/2025
-48,Target store,166.34,Shopping,01-03-2026
-49,dinner at palace,70.55,Food,"Dec 11, 2025"
-50,Spotify,121.2,Entertainment,10/01/2026
-51,Amazon.com*123,238.33,Shopping,12-15-2025
-52,Coffee!!,199.85,Food,"Dec 14, 2025"
-53,Doctor visit,142.27,Health,"Jan 12, 2026"
-54,bill for power,241.7,Utilities,"Dec 09, 2025"
-55,doctor visit,337.81,Health,"Dec 05, 2025"
-56,bill for power,362.31,Utilities,06/01/2026
-57,Gas station,59.56,Transport,12/01/2026
-58,Elec Bill - Jan,378.52,Utilities,2025-12-19
-59,Petrol refill,434.86,Transport,01-01-2026
-60,uberrr,315.51,Transport,12-08-2025
-61,Groceries,227.02,Food,"Dec 30, 2025"
-62,Electcity bill,416.69,Utilities,14/12/2025
-63,Lunch at MCD,405.07,Food,"Dec 16, 2025"
-64,Strbucks cofee,76.31,Food,01-02-2026
-65,Hospital bill,497.28,Health,"Dec 17, 2025"
-66,meds...,77.84,Health,25/12/2025
-67,NETFLIX.COM,494.28,Entertainment,2025-12-16
-68,UBER   123,484.74,Transport,06/12/2025
-69,groceries,192.75,Food,2025-12-01
-70,Spotify,366.3,Entertainment,05/01/2026
-71,Bus ticket,392.42,Transport,"Jan 03, 2026"
-72,bill for power,239.84,Utilities,20/12/2025
-73,Bus ticket,364.29,Transport,12-12-2025
-74,Spotify,68.9,Entertainment,"Dec 08, 2025"
-75,Train pass,494.94,Transport,12-07-2025
-76,Groceries,436.55,Food,"Dec 13, 2025"
-77,amzn mktp,175.58,Shopping,2025-12-03
-78,amzn  mktp,51.7,Shopping,"Jan 05, 2026"
-79,Pfizer meds,260.49,Health,24/12/2025
-80,NETFLIX.COM,372.27,Entertainment,2025-12-13
-81,WAL-MART #456,164.35,Shopping,2025-12-02
-82,Hospital bill,57.31,Health,2025-12-26
-83,Bus  ticket,219.68,Transport,12-16-2025
-84,Groceries,255.97,Food,2026-01-10
-85,strbucks cofee,131.3,Food,2026-01-09
-86,Hospital bill,338.03,Health,2025-12-05
-87,movie  night,429.36,Entertainment,2025-12-29
-88,UBER      123,261.84,Transport,08/01/2026
-89,subway sandwich,32.13,Food,"Dec 05, 2025"
-90,sttarbucks,126.45,Food,2025-12-01
-91,uberrr,40.9,Transport,15/12/2025
-92,Strbucks cofee,228.06,Food,27/12/2025
-93,Amazon.com*123,243.89,Shopping,2025-12-20
-94,UBER   123,235.69,Transport,25/12/2025
-95,bill  for  power,191.08,Utilities,2025-12-24
-96,bill for power,334.27,Utilities,2025-12-14
-97,netflix subscription,242.43,Entertainment,12-24-2025
-98,Netflix  subscription,87.56,Entertainment,"Jan 09, 2026"
-99,water  bill,462.1,Utilities,2025-12-18
-100,Walmrt  grocceries,160.37,Shopping,06/12/2025
-101,elec bill - jan,438.24,Utilities,12-18-2025
-102,Target store,16.11,Shopping,2026-01-06
-103,Gym membership,152.74,Health,"Dec 06, 2025"
-104,Cinema tickets,69.86,Entertainment,2026-01-08
-105,Subway  sandwich,255.23,Food,2025-12-29
-106,netflix.com,368.34,Entertainment,12-19-2025
-107,Mobile  recharge,207.44,Utilities,2025-12-21
-108,cinema tickets,495.59,Entertainment,13/01/2026
-109,Coffee!!,388.73,Food,12/12/2025
-110,UBER   123,445.15,Transport,19/12/2025
-111,Electcity bill,469.82,Utilities,12-28-2025
-112,UBER   123,321.12,Transport,"Dec 06, 2025"
-113,Walmrt  grocceries,347.64,Shopping,17/12/2025
-114,Target store,487.72,Shopping,12/01/2026
-115,Gym  membership,288.33,Health,01-09-2026
-116,Netflix subscription,77.62,Entertainment,12-15-2025
-117,Hospital  bill,498.84,Health,24/12/2025
-118,Spotify,364.23,Entertainment,"Dec 24, 2025"
-119,Cinema tickets,368.13,Entertainment,2025-12-23
-120,uberrr,351.98,Transport,2026-01-10
-121,Petrol refill,200.3,Transport,18/12/2025
-122,gas station,127.49,Transport,"Dec 30, 2025"
-123,water bill,262.82,Utilities,2026-01-08
-124,Elec Bill - Jan,437.08,Utilities,12-09-2025
-125,Hospital bill,456.97,Health,01-13-2026
-126,Gas station,335.17,Transport,14/01/2026
-127,walmrt grocceries,87.15,Shopping,12-10-2025
-128,Internet  Comcast,161.21,Utilities,12-27-2025
-129,Water bill,333.7,Utilities,"Dec 23, 2025"
-130,strbucks cofee,225.0,Food,13/01/2026
-131,Train pass,48.59,Transport,02/12/2025
-132,Amzon prime sub,187.08,Shopping,06/01/2026
-133,Petrol refill,321.98,Transport,20/12/2025
-134,Strbucks cofee,267.31,Food,01-09-2026
-135,Cinema tickets,449.56,Entertainment,12-05-2025
-136,walmrt grocceries,246.02,Shopping,"Dec 30, 2025"
-137,walmrt  grocceries,229.4,Shopping,01-07-2026
-138,Groceries,421.14,Food,"Jan 12, 2026"
-139,Dinner  at  Palace,135.85,Food,"Dec 28, 2025"
-140,NETFLIX.COM,89.78,Entertainment,01-05-2026
-141,Cinema tickets,189.32,Entertainment,"Dec 28, 2025"
-142,Walmrt grocceries,68.94,Shopping,"Jan 10, 2026"
-143,Bus ticket,201.07,Transport,12-17-2025
-144,amzn mktp,143.21,Shopping,2025-12-28
-145,amzn mktp,380.56,Shopping,2025-12-30
-146,Lunch  at  MCD,180.85,Food,07/12/2025
-147,Gym membership,424.94,Health,2026-01-13
-148,pharmacy - CVS,325.78,Health,2025-12-22
-149,Internet Comcast,211.37,Utilities,"Dec 26, 2025"
-150,pharmacy - CVS,302.73,Health,10/12/2025
-151,Pfizer meds,236.42,Health,21/12/2025
-152,wal-mart #456,426.53,Shopping,31/12/2025
-153,Subway sandwich,188.65,Food,17/12/2025
-154,Amzon  prime  sub,17.42,Shopping,2025-12-01
-155,Target store,414.91,Shopping,2025-12-14
-156,Dinner at Palace,452.64,Food,01-08-2026
-157,netflix.com,25.75,Entertainment,2025-12-04
-158,Doctor visit,412.61,Health,2025-12-29
-159,Bus ticket,357.86,Transport,"Dec 23, 2025"
-160,meds...,403.96,Health,02/12/2025
-161,NETFLIX.COM,131.45,Entertainment,"Dec 10, 2025"
-162,Amzon  prime  sub,15.81,Shopping,01-02-2026
-163,Netflix subscription,120.3,Entertainment,"Dec 07, 2025"
-164,Lunch at MCD,361.01,Food,03/12/2025
-165,Amazon.com*123,172.82,Shopping,"Dec 14, 2025"
-166,Petrol refill,213.49,Transport,"Dec 08, 2025"
-167,Groceries,472.63,Food,12-06-2025
-168,amazon.com*123,320.92,Shopping,12-04-2025
-169,Cinema tickets,91.83,Entertainment,2025-12-26
-170,Cinema tickets,424.5,Entertainment,2025-12-05
-171,dinner at palace,100.85,Food,"Dec 23, 2025"
-172,bill for power,239.61,Utilities,07/12/2025
-173,WAL-MART #456,48.98,Shopping,12-29-2025
-174,Water bill,298.62,Utilities,12-04-2025
-175,WAL-MART #456,392.01,Shopping,01-10-2026
-176,Gas station,375.96,Transport,01-09-2026
-177,Groceries,376.22,Food,"Dec 15, 2025"
-178,NETFLIX.COM,133.29,Entertainment,"Dec 07, 2025"
-179,Bus ticket,71.94,Transport,12-24-2025
-180,Electcity bill,425.49,Utilities,"Jan 13, 2026"
-181,gym membership,58.57,Health,"Dec 12, 2025"
-182,pharmacy - CVS,64.33,Health,18/12/2025
-183,pharmacy - cvs,177.47,Health,"Dec 12, 2025"
-184,amzn  mktp,435.84,Shopping,"Jan 02, 2026"
-185,Train pass,490.14,Transport,2026-01-06
-186,Target store,288.93,Shopping,12-12-2025
-187,meds...,145.02,Health,03/12/2025
-188,meds...,191.9,Health,12-03-2025
-189,Bus  ticket,235.36,Transport,2025-12-13
-190,Spotify,321.14,Entertainment,25/12/2025
-191,Dinner at Palace,374.14,Food,"Jan 05, 2026"
-192,pfizer meds,16.07,Health,01-05-2026
-193,Steam games,431.66,Entertainment,12/12/2025
-194,Steam games,130.3,Entertainment,09/12/2025
-195,amzn mktp,407.38,Shopping,2025-12-25
-196,Gas station,410.32,Transport,"Dec 07, 2025"
-197,Walmrt grocceries,41.11,Shopping,"Dec 20, 2025"
-198,Walmrt grocceries,23.67,Shopping,01-09-2026
-199,Subway sandwich,191.33,Food,2026-01-08
-200,Target store,366.82,Shopping,"Dec 03, 2025"
-201,Lunch  at  MCD,142.88,Food,2026-01-05
-202,bill for power,163.54,Utilities,"Dec 14, 2025"
-203,water bill,12.74,Utilities,24/12/2025
-204,NETFLIX.COM,182.08,Entertainment,01-15-2026
-205,Mobile recharge,27.63,Utilities,"Dec 06, 2025"
-206,Amzon prime sub,111.98,Shopping,2026-01-07
-207,Elec Bill - Jan,450.06,Utilities,12-28-2025
-208,Amzon prime sub,26.77,Shopping,"Dec 01, 2025"
-209,uberrr,154.41,Transport,13/01/2026
-210,amzn mktp,443.64,Shopping,19/12/2025
-211,hospital bill,363.2,Health,07/12/2025
-212,Amzon prime sub,15.93,Shopping,"Jan 11, 2026"
-213,netflix subscription,227.96,Entertainment,2025-12-25
-214,WAL-MART #456,55.36,Shopping,26/12/2025
-215,Internet Comcast,181.91,Utilities,01-14-2026
-216,Lunch at MCD,218.2,Food,19/12/2025
-217,walmrt grocceries,131.55,Shopping,"Jan 02, 2026"
-218,bill for power,161.25,Utilities,2025-12-12
-219,internet comcast,105.54,Utilities,2025-12-26
-220,Doctor visit,48.42,Health,04/12/2025
-221,Electcity bill,464.86,Utilities,"Dec 07, 2025"
-222,Target store,328.57,Shopping,01-08-2026
-223,uberrr,404.18,Transport,01-04-2026
-224,Target store,66.7,Shopping,15/01/2026
-225,Electcity bill,432.31,Utilities,17/12/2025
-226,bill for power,41.47,Utilities,14/12/2025
-227,Gym membership,216.88,Health,2026-01-11
-228,movie night,479.57,Entertainment,19/12/2025
-229,Subway sandwich,136.77,Food,12-31-2025
-230,Strbucks cofee,405.49,Food,23/12/2025
-231,meds...,291.89,Health,2025-12-06
-232,Walmrt grocceries,273.63,Shopping,"Dec 03, 2025"
-233,Lunch at MCD,267.74,Food,12-23-2025
-234,Hospital bill,121.93,Health,09/01/2026
-235,Cinema tickets,287.31,Entertainment,"Dec 09, 2025"
-236,Uber ridee,107.04,Transport,03/12/2025
-237,Target store,169.82,Shopping,"Dec 22, 2025"
-238,gym  membership,280.74,Health,"Dec 31, 2025"
-239,WAL-MART #456,201.94,Shopping,12-18-2025
-240,uber ridee,309.95,Transport,"Dec 03, 2025"
-241,Gas station,409.6,Transport,12-29-2025
-242,Spotify,497.86,Entertainment,"Jan 09, 2026"
-243,Doctor  visit,364.03,Health,"Dec 03, 2025"
-244,Steam games,18.37,Entertainment,2025-12-12
-245,Gas station,224.9,Transport,2025-12-14
-246,Internet Comcast,129.43,Utilities,"Dec 02, 2025"
-247,Mobile recharge,365.4,Utilities,12-08-2025
-248,WAL-MART #456,433.72,Shopping,12-28-2025
-249,amzn mktp,225.69,Shopping,12-14-2025
-250,Mobile recharge,394.14,Utilities,01-11-2026
-251,Netflix subscription,236.46,Entertainment,"Dec 21, 2025"
-252,netflix.com,150.56,Entertainment,"Dec 15, 2025"
-253,Pfizer meds,351.73,Health,2026-01-03
-254,wal-mart #456,322.4,Shopping,"Dec 02, 2025"
-255,NETFLIX.COM,270.63,Entertainment,01-04-2026
-256,Strbucks  cofee,349.53,Food,2025-12-26
-257,pharmacy  -  CVS,61.12,Health,01/01/2026
-258,Spotify,178.45,Entertainment,10/01/2026
-259,meds...,176.36,Health,2025-12-06
-260,WAL-MART #456,281.9,Shopping,"Jan 12, 2026"
-261,pharmacy - CVS,293.58,Health,2025-12-26
-262,subway  sandwich,263.96,Food,"Jan 09, 2026"
-263,Petrol refill,439.99,Transport,"Dec 13, 2025"
-264,Subway sandwich,263.2,Food,2025-12-30
-265,meds...,149.52,Health,15/12/2025
-266,Dinner at Palace,303.47,Food,25/12/2025
-267,Elec  Bill  -  Jan,328.8,Utilities,2025-12-24
-268,sttarbucks,275.37,Food,"Dec 23, 2025"
-269,Elec Bill - Jan,244.4,Utilities,"Dec 03, 2025"
-270,UBER   123,45.61,Transport,12-21-2025
-271,Dinner at Palace,369.31,Food,"Dec 16, 2025"
-272,groceries,411.31,Food,"Dec 30, 2025"
-273,pharmacy - CVS,376.73,Health,12-10-2025
-274,Groceries,38.36,Food,2025-12-25
-275,Bus ticket,298.18,Transport,"Dec 02, 2025"
-276,Elec Bill - Jan,179.85,Utilities,2026-01-10
-277,Strbucks cofee,434.45,Food,12-25-2025
-278,Elec Bill - Jan,14.25,Utilities,04/01/2026
-279,pharmacy - CVS,128.13,Health,05/01/2026
-280,uber ridee,397.65,Transport,12-13-2025
-281,Strbucks cofee,319.55,Food,12-28-2025
-282,meds...,83.67,Health,"Dec 06, 2025"
-283,Subway  sandwich,347.2,Food,"Dec 11, 2025"
-284,Spotify,447.19,Entertainment,"Dec 15, 2025"
-285,WAL-MART #456,38.47,Shopping,10/12/2025
-286,Electcity bill,121.78,Utilities,"Dec 14, 2025"
-287,internet comcast,210.0,Utilities,01-03-2026
-288,sttarbucks,196.5,Food,2025-12-06
-289,Target store,383.79,Shopping,01-05-2026
-290,Uber ridee,478.16,Transport,2025-12-03
-291,Hospital bill,92.73,Health,"Dec 23, 2025"
-292,Target store,379.52,Shopping,12-20-2025
-293,Gas station,18.18,Transport,01-14-2026
-294,meds...,268.07,Health,2025-12-22
-295,Doctor visit,126.22,Health,12-08-2025
-296,amzn mktp,134.86,Shopping,12-07-2025
-297,Petrol refill,191.02,Transport,11/12/2025
-298,Amzon prime sub,363.64,Shopping,27/12/2025
-299,Electcity bill,184.49,Utilities,12-05-2025
-300,Strbucks cofee,330.82,Food,2026-01-15
-301,Gym membership,36.85,Health,"Jan 13, 2026"
-302,petrol refill,217.1,Transport,2025-12-18
-303,Strbucks cofee,369.71,Food,2025-12-22
-304,Steam games,135.39,Entertainment,01-10-2026
-305,Doctor visit,155.99,Health,12-28-2025
-306,sttarbucks,496.84,Food,"Dec 27, 2025"
-307,Doctor visit,35.29,Health,03/01/2026
-308,Spotify,288.56,Entertainment,26/12/2025
-309,Steam  games,370.88,Entertainment,"Jan 01, 2026"
-310,Gas station,283.08,Transport,04/01/2026
-311,Groceries,234.78,Food,2025-12-18
-312,pfizer meds,474.3,Health,20/12/2025
-313,Subway sandwich,482.81,Food,09/01/2026
-314,Amazon.com*123,489.03,Shopping,01-05-2026
-315,bill for power,476.15,Utilities,"Jan 10, 2026"
-316,movie night,34.24,Entertainment,"Dec 31, 2025"
-317,Groceries,81.49,Food,"Jan 06, 2026"
-318,amzn mktp,340.46,Shopping,01-10-2026
-319,subway sandwich,487.49,Food,12-10-2025
-320,Target store,236.41,Shopping,2025-12-24
-321,sttarbucks,188.19,Food,14/12/2025
-322,hospital  bill,118.65,Health,23/12/2025
-323,Amazon.com*123,427.81,Shopping,"Jan 10, 2026"
-324,Spotify,20.57,Entertainment,12-17-2025
-325,Hospital bill,158.02,Health,01-13-2026
-326,uberrr,203.36,Transport,2025-12-22
-327,Water bill,416.41,Utilities,2026-01-12
-328,Hospital bill,82.82,Health,15/12/2025
-329,amzn mktp,322.08,Shopping,03/12/2025
-330,meds...,471.12,Health,"Dec 08, 2025"
-331,Spotify,356.53,Entertainment,12-28-2025
-332,Elec Bill - Jan,218.53,Utilities,"Dec 09, 2025"
-333,Doctor  visit,89.21,Health,19/12/2025
-334,uberrr,373.88,Transport,"Dec 07, 2025"
-335,movie night,13.99,Entertainment,29/12/2025
-336,sttarbucks,189.73,Food,"Dec 25, 2025"
-337,Netflix subscription,70.73,Entertainment,2026-01-14
-338,WAL-MART #456,302.44,Shopping,2026-01-13
-339,pharmacy - CVS,154.7,Health,2025-12-03
-340,water bill,370.95,Utilities,2025-12-31
-341,Train pass,150.07,Transport,12-20-2025
-342,WAL-MART #456,160.56,Shopping,04/12/2025
-343,bill for power,476.54,Utilities,01/01/2026
-344,Petrol refill,419.82,Transport,19/12/2025
-345,Amazon.com*123,17.89,Shopping,12-23-2025
-346,uber ridee,169.31,Transport,"Dec 27, 2025"
-347,uberrr,474.31,Transport,04/01/2026
-348,amzn mktp,187.84,Shopping,2025-12-31
-349,subway sandwich,185.47,Food,2026-01-15
-350,Pfizer meds,339.7,Health,18/12/2025
-351,sttarbucks,20.55,Food,10/01/2026
-352,NETFLIX.COM,481.45,Entertainment,02/12/2025
-353,UBER   123,438.04,Transport,12-20-2025
-354,Strbucks cofee,263.49,Food,"Jan 02, 2026"
-355,Cinema tickets,192.17,Entertainment,"Jan 01, 2026"
-356,spotify,165.44,Entertainment,"Dec 25, 2025"
-357,amzn  mktp,368.99,Shopping,01-07-2026
-358,Lunch at MCD,415.2,Food,"Jan 01, 2026"
-359,mobile recharge,346.65,Utilities,01-08-2026
-360,sttarbucks,9.93,Food,01-10-2026
-361,Hospital bill,424.71,Health,12-07-2025
-362,Pfizer meds,349.75,Health,01-15-2026
-363,amzn mktp,59.54,Shopping,2026-01-09
-364,Netflix subscription,490.32,Entertainment,02/01/2026
-365,Groceries,302.19,Food,12-09-2025
-366,Train pass,386.11,Transport,12-25-2025
-367,movie night,316.49,Entertainment,"Dec 09, 2025"
-368,steam games,131.63,Entertainment,01-08-2026
-369,elec bill - jan,308.7,Utilities,01-09-2026
-370,Bus  ticket,34.12,Transport,"Jan 02, 2026"
-371,bill for power,456.12,Utilities,"Dec 14, 2025"
-372,amzn mktp,305.31,Shopping,25/12/2025
-373,doctor visit,434.88,Health,2025-12-26
-374,WAL-MART #456,255.04,Shopping,25/12/2025
-375,Pfizer meds,155.61,Health,15/12/2025
-376,Subway sandwich,122.0,Food,"Dec 19, 2025"
-377,Internet  Comcast,77.0,Utilities,"Dec 07, 2025"
-378,uberrr,370.13,Transport,01-12-2026
-379,Amazon.com*123,219.16,Shopping,12-19-2025
-380,train pass,228.73,Transport,2026-01-10
-381,Target store,158.59,Shopping,22/12/2025
-382,train pass,474.51,Transport,"Jan 14, 2026"
-383,water bill,34.13,Utilities,12-01-2025
-384,target store,201.0,Shopping,12-21-2025
-385,Elec Bill - Jan,96.67,Utilities,12-19-2025
-386,amazon.com*123,308.02,Shopping,25/12/2025
-387,Cinema tickets,37.63,Entertainment,"Jan 10, 2026"
-388,Gym membership,136.53,Health,2026-01-14
-389,groceries,175.99,Food,12-22-2025
-390,UBER   123,321.77,Transport,01/12/2025
-391,Petrol refill,267.27,Transport,"Jan 05, 2026"
-392,uber   123,370.84,Transport,12-14-2025
-393,Gas station,333.01,Transport,12-13-2025
-394,Bus ticket,283.27,Transport,01-10-2026
-395,pharmacy - CVS,9.29,Health,2026-01-09
-396,meds...,147.46,Health,"Dec 11, 2025"
-397,Coffee!!,427.32,Food,2026-01-11
-398,amzn mktp,135.06,Shopping,16/12/2025
-399,wal-mart #456,58.88,Shopping,03/01/2026
-400,movie night,201.38,Entertainment,2025-12-20
-401,Uber ridee,266.01,Transport,"Jan 15, 2026"
-402,Elec Bill - Jan,305.7,Utilities,2025-12-27
-403,Gym membership,453.63,Health,"Dec 23, 2025"
-404,Strbucks cofee,145.46,Food,18/12/2025
-405,Subway sandwich,431.93,Food,12-06-2025
-406,Train  pass,296.26,Transport,2025-12-23
-407,petrol refill,181.2,Transport,2025-12-02
-408,Walmrt grocceries,114.29,Shopping,01-04-2026
-409,Subway sandwich,418.64,Food,"Dec 06, 2025"
-410,Subway sandwich,116.08,Food,"Dec 08, 2025"
-411,hospital bill,167.6,Health,2025-12-08
-412,Hospital bill,447.95,Health,01-02-2026
-413,Dinner at Palace,432.26,Food,12-19-2025
-414,groceries,245.05,Food,01-12-2026
-415,Internet Comcast,367.82,Utilities,2026-01-08
-416,meds...,362.44,Health,12-07-2025
-417,Coffee!!,252.68,Food,2025-12-05
-418,Gas station,168.39,Transport,03/12/2025
-419,sttarbucks,198.41,Food,04/12/2025
-420,bus ticket,27.45,Transport,2026-01-04
-421,movie night,298.53,Entertainment,14/01/2026
-422,Petrol refill,190.43,Transport,12-21-2025
-423,amzn mktp,351.83,Shopping,26/12/2025
-424,amzn mktp,131.41,Shopping,25/12/2025
-425,Pfizer meds,479.96,Health,"Dec 21, 2025"
-426,Walmrt grocceries,185.41,Shopping,"Dec 01, 2025"
-427,Cinema tickets,78.69,Entertainment,2026-01-15
-428,Coffee!!,319.67,Food,2026-01-13
-429,Mobile recharge,15.02,Utilities,12-15-2025
-430,Doctor  visit,323.04,Health,02/12/2025
-431,electcity bill,210.11,Utilities,01-13-2026
-432,subway sandwich,397.64,Food,12-30-2025
-433,meds...,328.49,Health,2025-12-16
-434,walmrt  grocceries,311.3,Shopping,2026-01-01
-435,meds...,177.88,Health,12-13-2025
-436,water bill,5.03,Utilities,"Jan 11, 2026"
-437,Dinner at Palace,329.43,Food,01-09-2026
-438,Spotify,413.52,Entertainment,01-06-2026
-439,Steam games,266.5,Entertainment,22/12/2025
-440,Lunch at MCD,98.23,Food,12-04-2025
-441,Spotify,460.76,Entertainment,06/12/2025
-442,netflix subscription,36.59,Entertainment,12/01/2026
-443,internet comcast,167.38,Utilities,2025-12-18
-444,meds...,318.11,Health,"Jan 12, 2026"
-445,Dinner at Palace,188.71,Food,2025-12-13
-446,movie night,370.12,Entertainment,21/12/2025
-447,Dinner at Palace,218.01,Food,12-07-2025
-448,Electcity bill,35.0,Utilities,12-22-2025
-449,Amazon.com*123,301.93,Shopping,2026-01-14
-450,Gas station,340.96,Transport,12-14-2025
-451,pharmacy - CVS,129.43,Health,01-11-2026
-452,sttarbucks,33.39,Food,2026-01-14
-453,Elec Bill - Jan,54.63,Utilities,25/12/2025
-454,Gas station,321.1,Transport,12-31-2025
-455,Uber ridee,49.07,Transport,"Dec 30, 2025"
-456,pharmacy - CVS,231.89,Health,"Dec 07, 2025"
-457,target store,77.74,Shopping,01-12-2026
-458,Internet Comcast,28.05,Utilities,"Dec 07, 2025"
-459,Mobile recharge,12.22,Utilities,12-19-2025
-460,Netflix subscription,323.62,Entertainment,"Dec 17, 2025"
-461,Pfizer meds,296.69,Health,12-25-2025
-462,amzn mktp,195.94,Shopping,2025-12-08
-463,Dinner at Palace,456.28,Food,12-16-2025
-464,Amazon.com*123,102.5,Shopping,"Jan 06, 2026"
-465,sttarbucks,240.06,Food,10/12/2025
-466,Amazon.com*123,120.45,Shopping,01-10-2026
-467,Gas  station,304.2,Transport,2025-12-24
-468,Walmrt grocceries,477.47,Shopping,14/12/2025
-469,Elec Bill - Jan,108.61,Utilities,22/12/2025
-470,Water bill,375.15,Utilities,"Dec 15, 2025"
-471,bill for power,237.77,Utilities,"Dec 01, 2025"
-472,Electcity bill,147.37,Utilities,13/01/2026
-473,Water bill,484.93,Utilities,"Dec 25, 2025"
-474,pharmacy - CVS,173.66,Health,"Jan 15, 2026"
-475,amzon prime sub,191.1,Shopping,2026-01-13
-476,NETFLIX.COM,96.17,Entertainment,"Jan 04, 2026"
-477,Elec Bill - Jan,34.08,Utilities,"Dec 19, 2025"
-478,Water bill,188.71,Utilities,12-15-2025
-479,Strbucks cofee,278.29,Food,"Dec 30, 2025"
-480,dinner at palace,403.6,Food,31/12/2025
-481,Target  store,229.6,Shopping,12/01/2026
-482,Netflix subscription,35.19,Entertainment,"Dec 07, 2025"
-483,pharmacy - CVS,284.9,Health,07/12/2025
-484,Internet Comcast,359.65,Utilities,"Dec 29, 2025"
-485,Gas  station,376.39,Transport,01-14-2026
-486,Cinema tickets,281.74,Entertainment,"Dec 31, 2025"
-487,movie night,152.47,Entertainment,12-19-2025
-488,Doctor visit,475.13,Health,2025-12-26
-489,Uber ridee,206.47,Transport,01-01-2026
-490,movie  night,329.48,Entertainment,11/01/2026
-491,Elec Bill - Jan,248.69,Utilities,12-12-2025
-492,bill for power,275.24,Utilities,12-12-2025
-493,Steam games,51.69,Entertainment,"Dec 26, 2025"
-494,Walmrt grocceries,222.14,Shopping,2025-12-12
-495,Walmrt grocceries,207.2,Shopping,2026-01-09
-496,Spotify,242.05,Entertainment,2025-12-07
-497,amazon.com*123,35.19,Shopping,12-07-2025
-498,meds...,415.41,Health,05/12/2025
-499,elec  bill  -  jan,334.58,Utilities,01-07-2026
-500,Doctor visit,369.61,Health,"Dec 07, 2025"
+1,Hospital bill,371.79,Health,2025-12-26
+2,meds...,281.12,Health,07/01/2026
+3,amazon.com*123,195.49,Shopping,12-26-2025
+4,gym membership,121.33,Health,07/12/2025
+5,Walmrt grocceries,499.06,Shopping,"Dec 28, 2025"
+6,bill for power,485.11,Utilities,2025-12-14
+7,petrol refill,206.43,Transport,03/12/2025
+8,Petrol  refill,212.47,Transport,"Dec 01, 2025"
+9,Dinner at Palace,57.99,Food,"Dec 21, 2025"
+10,Amazon.com*123,162.9,Shopping,2025-12-18
+11,Doctor visit,38.42,Health,01-11-2026
+12,uberrr,251.99,Transport,2025-12-28
+13,Mobile recharge,164.16,Utilities,12-17-2025
+14,Mobile  recharge,220.98,Utilities,12-19-2025
+15,Pfizer meds,326.35,Health,10/01/2026
+16,Mobile recharge,192.62,Utilities,12-31-2025
+17,pfizer meds,400.51,Health,2025-12-01
+18,Amzon prime sub,416.31,Shopping,2026-01-08
+19,Bus ticket,127.41,Transport,2025-12-20
+20,Amazon.com*123,203.53,Shopping,21/12/2025
+21,Amazon.com*123,158.11,Shopping,"Dec 30, 2025"
+22,WAL-MART #456,389.96,Shopping,01-08-2026
+23,Lunch at MCD,425.02,Food,"Jan 07, 2026"
+24,Subway sandwich,429.63,Food,10/01/2026
+25,Dinner at Palace,424.63,Food,"Dec 29, 2025"
+26,bill for power,316.96,Utilities,01-10-2026
+27,doctor visit,453.6,Health,"Jan 11, 2026"
+28,Hospital bill,121.6,Health,12-15-2025
+29,Gas station,271.98,Transport,"Dec 31, 2025"
+30,movie night,253.0,Entertainment,12/12/2025
+31,Petrol refill,167.81,Transport,21/12/2025
+32,Gym membership,88.35,Health,12-06-2025
+33,Train pass,487.52,Transport,2026-01-12
+34,NETFLIX.COM,260.58,Entertainment,24/12/2025
+35,Internet Comcast,267.74,Utilities,"Dec 08, 2025"
+36,steam  games,324.08,Entertainment,12-12-2025
+37,Cinema tickets,351.6,Entertainment,2025-12-10
+38,uberrr,281.39,Transport,2025-12-19
+39,amazon.com*123,386.04,Shopping,16/12/2025
+40,steam  games,451.35,Entertainment,08/12/2025
+41,Spotify,37.66,Entertainment,24/12/2025
+42,Doctor visit,37.93,Health,12-23-2025
+43,NETFLIX.COM,155.86,Entertainment,05/01/2026
+44,NETFLIX.COM,85.79,Entertainment,2025-12-21
+45,Electcity bill,170.04,Utilities,2025-12-24
+46,Walmrt grocceries,121.68,Shopping,2026-01-15
+47,amzn mktp,61.24,Shopping,09/01/2026
+48,Mobile recharge,113.75,Utilities,2025-12-15
+49,Target store,288.59,Shopping,12-01-2025
+50,Hospital  bill,344.12,Health,2026-01-06
+51,Lunch at MCD,138.59,Food,31/12/2025
+52,Steam games,221.28,Entertainment,19/12/2025
+53,Spotify,206.57,Entertainment,"Dec 05, 2025"
+54,strbucks cofee,63.64,Food,31/12/2025
+55,sttarbucks,471.99,Food,2026-01-09
+56,Amzon prime sub,79.33,Shopping,"Dec 18, 2025"
+57,electcity bill,51.35,Utilities,07/01/2026
+58,Cinema tickets,376.77,Entertainment,"Jan 06, 2026"
+59,Electcity bill,34.35,Utilities,04/12/2025
+60,Doctor visit,32.34,Health,15/01/2026
+61,Target store,470.08,Shopping,2025-12-28
+62,Bus ticket,30.75,Transport,"Dec 15, 2025"
+63,meds...,485.5,Health,2025-12-25
+64,sttarbucks,427.24,Food,04/12/2025
+65,Cinema tickets,78.15,Entertainment,12-24-2025
+66,amzn  mktp,407.35,Shopping,06/12/2025
+67,Train pass,484.01,Transport,"Jan 11, 2026"
+68,uberrr,106.42,Transport,2026-01-13
+69,UBER   123,253.98,Transport,"Jan 14, 2026"
+70,Coffee!!,52.09,Food,"Dec 22, 2025"
+71,movie night,311.42,Entertainment,"Dec 06, 2025"
+72,Gas station,323.79,Transport,"Dec 21, 2025"
+73,amazon.com*123,359.9,Shopping,"Dec 12, 2025"
+74,Electcity bill,282.22,Utilities,31/12/2025
+75,doctor visit,332.26,Health,"Dec 26, 2025"
+76,Petrol refill,291.77,Transport,12-06-2025
+77,Dinner at Palace,40.75,Food,12-26-2025
+78,Mobile recharge,240.04,Utilities,20/12/2025
+79,Amazon.com*123,88.31,Shopping,16/12/2025
+80,Netflix subscription,104.02,Entertainment,12-26-2025
+81,spotify,237.32,Entertainment,12-30-2025
+82,Elec Bill - Jan,249.34,Utilities,12-30-2025
+83,amzon prime sub,451.92,Shopping,13/01/2026
+84,amzn  mktp,177.85,Shopping,12/12/2025
+85,Gym membership,401.64,Health,03/01/2026
+86,Hospital bill,146.6,Health,11/12/2025
+87,Train pass,115.75,Transport,2025-12-13
+88,WAL-MART #456,184.96,Shopping,12-28-2025
+89,Gym membership,139.78,Health,"Jan 10, 2026"
+90,Steam games,307.09,Entertainment,24/12/2025
+91,Target store,130.23,Shopping,25/12/2025
+92,Amzon prime sub,276.59,Shopping,01-04-2026
+93,strbucks cofee,6.44,Food,12-02-2025
+94,movie night,145.48,Entertainment,12-10-2025
+95,Walmrt grocceries,285.43,Shopping,"Dec 10, 2025"
+96,NETFLIX.COM,216.9,Entertainment,12-20-2025
+97,Amazon.com*123,280.23,Shopping,01-10-2026
+98,meds...,354.65,Health,"Jan 02, 2026"
+99,WAL-MART #456,190.17,Shopping,2025-12-25
+100,Strbucks cofee,78.05,Food,12-23-2025
+101,Train pass,432.86,Transport,2026-01-07
+102,sttarbucks,187.35,Food,12-14-2025
+103,Spotify,74.31,Entertainment,31/12/2025
+104,amzon prime sub,328.72,Shopping,2026-01-06
+105,meds...,227.68,Health,"Dec 16, 2025"
+106,Bus ticket,183.99,Transport,"Dec 08, 2025"
+107,Train pass,284.62,Transport,14/01/2026
+108,Mobile recharge,223.42,Utilities,12-11-2025
+109,Elec Bill - Jan,489.51,Utilities,2025-12-19
+110,Elec Bill - Jan,212.65,Utilities,01-05-2026
+111,sttarbucks,387.61,Food,12-14-2025
+112,walmrt grocceries,419.36,Shopping,11/01/2026
+113,Doctor visit,389.41,Health,01-11-2026
+114,UBER   123,445.06,Transport,"Dec 29, 2025"
+115,Doctor visit,262.74,Health,"Dec 23, 2025"
+116,Lunch at MCD,230.42,Food,03/12/2025
+117,Hospital bill,446.58,Health,12-05-2025
+118,Target store,350.46,Shopping,01-14-2026
+119,amzn mktp,420.76,Shopping,"Dec 30, 2025"
+120,Elec Bill - Jan,462.6,Utilities,04/01/2026
+121,Doctor visit,427.86,Health,12-26-2025
+122,Bus  ticket,171.76,Transport,12-21-2025
+123,Subway sandwich,96.49,Food,"Jan 02, 2026"
+124,Uber ridee,271.96,Transport,2026-01-10
+125,spotify,252.02,Entertainment,12-11-2025
+126,groceries,434.78,Food,2025-12-03
+127,Water bill,92.88,Utilities,"Dec 24, 2025"
+128,NETFLIX.COM,49.57,Entertainment,2025-12-14
+129,amazon.com*123,126.32,Shopping,01-04-2026
+130,Amzon prime sub,328.96,Shopping,2025-12-18
+131,Electcity bill,63.1,Utilities,2025-12-18
+132,meds...,41.09,Health,13/01/2026
+133,Target store,397.94,Shopping,"Dec 27, 2025"
+134,water bill,433.4,Utilities,15/01/2026
+135,Groceries,480.77,Food,2025-12-05
+136,movie night,266.9,Entertainment,03/01/2026
+137,Water bill,451.24,Utilities,2025-12-03
+138,Amzon prime sub,15.74,Shopping,01-04-2026
+139,movie  night,34.35,Entertainment,28/12/2025
+140,Mobile recharge,485.35,Utilities,"Dec 05, 2025"
+141,Subway sandwich,302.39,Food,2025-12-06
+142,movie night,96.91,Entertainment,"Dec 09, 2025"
+143,Strbucks cofee,356.81,Food,16/12/2025
+144,meds...,308.61,Health,17/12/2025
+145,Internet Comcast,378.41,Utilities,"Dec 29, 2025"
+146,spotify,263.42,Entertainment,2025-12-28
+147,Doctor visit,320.89,Health,"Dec 06, 2025"
+148,Amzon  prime  sub,388.91,Shopping,20/12/2025
+149,Uber ridee,420.2,Transport,12-17-2025
+150,pharmacy - cvs,478.75,Health,2025-12-18
+151,Uber ridee,407.74,Transport,21/12/2025
+152,WAL-MART #456,336.04,Shopping,12-08-2025
+153,elec bill - jan,325.85,Utilities,29/12/2025
+154,Amzon prime sub,26.76,Shopping,"Dec 27, 2025"
+155,pharmacy - CVS,248.94,Health,"Dec 22, 2025"
+156,Steam games,123.28,Entertainment,12-24-2025
+157,Uber  ridee,13.89,Transport,"Dec 29, 2025"
+158,uberrr,207.8,Transport,09/12/2025
+159,Internet Comcast,79.37,Utilities,12-03-2025
+160,Cinema tickets,453.42,Entertainment,15/12/2025
+161,Steam games,185.31,Entertainment,2025-12-12
+162,subway sandwich,104.34,Food,12-16-2025
+163,subway sandwich,262.76,Food,15/12/2025
+164,meds...,90.59,Health,"Dec 09, 2025"
+165,NETFLIX.COM,263.39,Entertainment,15/12/2025
+166,Electcity bill,408.41,Utilities,12-10-2025
+167,Uber ridee,111.85,Transport,2026-01-14
+168,Groceries,91.05,Food,15/12/2025
+169,WAL-MART #456,23.06,Shopping,12-22-2025
+170,wal-mart #456,126.13,Shopping,"Dec 22, 2025"
+171,WAL-MART #456,13.63,Shopping,01-05-2026
+172,Groceries,422.58,Food,2026-01-05
+173,groceries,150.91,Food,2026-01-14
+174,dinner at palace,465.82,Food,"Dec 27, 2025"
+175,lunch at mcd,47.72,Food,2026-01-01
+176,netflix.com,202.51,Entertainment,"Dec 17, 2025"
+177,uber ridee,47.8,Transport,"Dec 10, 2025"
+178,pharmacy - CVS,467.21,Health,01-09-2026
+179,Spotify,354.17,Entertainment,2026-01-06
+180,Netflix subscription,123.43,Entertainment,"Jan 06, 2026"
+181,Water bill,366.04,Utilities,"Dec 24, 2025"
+182,Coffee!!,6.0,Food,2025-12-22
+183,target store,262.73,Shopping,02/12/2025
+184,Uber ridee,50.81,Transport,14/12/2025
+185,Hospital bill,91.54,Health,12-30-2025
+186,Hospital  bill,368.05,Health,03/01/2026
+187,amzn mktp,176.19,Shopping,2025-12-28
+188,bill for power,367.22,Utilities,12-12-2025
+189,Lunch at MCD,24.27,Food,2025-12-09
+190,Dinner at Palace,412.85,Food,12-27-2025
+191,pharmacy - CVS,441.59,Health,12-09-2025
+192,Strbucks cofee,246.12,Food,"Dec 20, 2025"
+193,Amzon prime sub,478.15,Shopping,2025-12-04
+194,Water  bill,249.52,Utilities,2025-12-05
+195,Netflix subscription,167.24,Entertainment,"Dec 08, 2025"
+196,bill for power,220.35,Utilities,2025-12-08
+197,Amzon prime sub,389.49,Shopping,12-08-2025
+198,Water bill,479.93,Utilities,11/01/2026
+199,Groceries,481.93,Food,2025-12-08
+200,Spotify,275.44,Entertainment,12-24-2025
+201,Bus ticket,455.33,Transport,2026-01-07
+202,Spotify,419.13,Entertainment,01-06-2026
+203,Subway sandwich,345.67,Food,2025-12-10
+204,Lunch at MCD,434.57,Food,2026-01-01
+205,movie night,255.93,Entertainment,2025-12-28
+206,Dinner at Palace,380.22,Food,30/12/2025
+207,WAL-MART #456,88.92,Shopping,17/12/2025
+208,UBER   123,172.96,Transport,2025-12-31
+209,bill for power,306.27,Utilities,12-16-2025
+210,Doctor visit,33.53,Health,2026-01-03
+211,Dinner at Palace,128.73,Food,2025-12-06
+212,cinema tickets,409.14,Entertainment,01-04-2026
+213,meds...,439.9,Health,2025-12-14
+214,amzn mktp,447.68,Shopping,2025-12-03
+215,Water bill,288.11,Utilities,12-05-2025
+216,Water bill,125.72,Utilities,13/12/2025
+217,Petrol refill,97.19,Transport,2025-12-11
+218,hospital bill,393.03,Health,2025-12-01
+219,elec bill - jan,486.68,Utilities,01-01-2026
+220,Walmrt grocceries,412.78,Shopping,"Dec 28, 2025"
+221,NETFLIX.COM,276.49,Entertainment,2025-12-12
+222,amzn mktp,306.17,Shopping,01-09-2026
+223,Petrol refill,309.75,Transport,14/01/2026
+224,movie night,269.29,Entertainment,25/12/2025
+225,Pfizer  meds,377.37,Health,12/01/2026
+226,amzn mktp,9.64,Shopping,02/01/2026
+227,Gas station,271.86,Transport,"Dec 24, 2025"
+228,Gas station,133.75,Transport,"Jan 04, 2026"
+229,Amzon prime sub,379.41,Shopping,2025-12-19
+230,Elec Bill - Jan,180.79,Utilities,2025-12-26
+231,Dinner at Palace,76.12,Food,2026-01-09
+232,uberrr,286.45,Transport,"Dec 02, 2025"
+233,lunch at mcd,470.24,Food,2025-12-01
+234,Netflix  subscription,125.55,Entertainment,"Jan 03, 2026"
+235,Spotify,126.61,Entertainment,"Jan 15, 2026"
+236,amzn mktp,118.37,Shopping,2025-12-17
+237,Gas station,59.68,Transport,04/01/2026
+238,Lunch at MCD,418.06,Food,12-22-2025
+239,spotify,194.28,Entertainment,06/01/2026
+240,Pfizer meds,301.26,Health,"Jan 09, 2026"
+241,Walmrt grocceries,151.01,Shopping,2025-12-18
+242,uberrr,316.12,Transport,14/01/2026
+243,Doctor visit,17.49,Health,"Dec 31, 2025"
+244,dinner at palace,355.95,Food,2025-12-27
+245,Hospital bill,233.07,Health,08/12/2025
+246,dinner at palace,291.75,Food,01-03-2026
+247,target  store,118.37,Shopping,"Jan 04, 2026"
+248,Elec  Bill  -  Jan,258.22,Utilities,"Dec 23, 2025"
+249,Internet Comcast,89.9,Utilities,12-25-2025
+250,NETFLIX.COM,120.98,Entertainment,12-24-2025
+251,Pfizer meds,166.84,Health,17/12/2025
+252,bill for power,21.81,Utilities,"Jan 11, 2026"
+253,Internet Comcast,369.94,Utilities,12-22-2025
+254,NETFLIX.COM,397.24,Entertainment,"Dec 24, 2025"
+255,Electcity bill,152.36,Utilities,12-24-2025
+256,UBER   123,251.51,Transport,2025-12-12
+257,Train pass,312.19,Transport,2025-12-06
+258,Dinner at Palace,50.11,Food,01-10-2026
+259,netflix.com,115.73,Entertainment,"Jan 04, 2026"
+260,doctor visit,215.34,Health,"Dec 17, 2025"
+261,Steam games,489.19,Entertainment,"Jan 11, 2026"
+262,Internet Comcast,347.35,Utilities,2025-12-12
+263,bill for power,28.86,Utilities,2026-01-03
+264,Lunch at MCD,455.24,Food,2025-12-22
+265,Water bill,158.16,Utilities,2025-12-11
+266,pharmacy - CVS,139.79,Health,2026-01-07
+267,Spotify,463.22,Entertainment,2026-01-05
+268,Spotify,314.13,Entertainment,"Jan 12, 2026"
+269,groceries,267.48,Food,"Jan 08, 2026"
+270,spotify,169.65,Entertainment,28/12/2025
+271,Mobile recharge,6.82,Utilities,"Jan 06, 2026"
+272,NETFLIX.COM,53.77,Entertainment,"Dec 24, 2025"
+273,movie night,277.91,Entertainment,"Dec 23, 2025"
+274,Target store,170.13,Shopping,15/12/2025
+275,uber ridee,291.4,Transport,"Dec 04, 2025"
+276,Subway sandwich,275.16,Food,2025-12-06
+277,gas station,317.21,Transport,2025-12-19
+278,Walmrt grocceries,479.51,Shopping,"Jan 13, 2026"
+279,movie  night,444.65,Entertainment,"Jan 05, 2026"
+280,Strbucks cofee,182.21,Food,06/01/2026
+281,pharmacy - CVS,174.63,Health,04/01/2026
+282,meds...,168.64,Health,12-07-2025
+283,netflix subscription,433.91,Entertainment,24/12/2025
+284,Steam games,23.96,Entertainment,"Jan 04, 2026"
+285,internet comcast,333.81,Utilities,12-17-2025
+286,spotify,486.37,Entertainment,01-12-2026
+287,NETFLIX.COM,203.34,Entertainment,12/12/2025
+288,Bus ticket,146.69,Transport,02/12/2025
+289,Pfizer meds,271.79,Health,12-25-2025
+290,Amazon.com*123,255.93,Shopping,"Dec 02, 2025"
+291,subway sandwich,412.66,Food,15/12/2025
+292,bus ticket,287.82,Transport,06/12/2025
+293,amzn mktp,199.07,Shopping,12-29-2025
+294,Groceries,257.3,Food,16/12/2025
+295,Amzon  prime  sub,269.65,Shopping,"Dec 20, 2025"
+296,Amazon.com*123,209.29,Shopping,2025-12-21
+297,Spotify,44.93,Entertainment,"Dec 12, 2025"
+298,Internet Comcast,185.01,Utilities,"Jan 05, 2026"
+299,uberrr,192.74,Transport,"Dec 16, 2025"
+300,Internet  Comcast,155.2,Utilities,2025-12-16
+301,Water bill,462.62,Utilities,01-12-2026
+302,uberrr,369.2,Transport,12-12-2025
+303,amzn mktp,367.55,Shopping,2025-12-01
+304,sttarbucks,314.91,Food,2025-12-19
+305,amzon prime sub,192.51,Shopping,2025-12-21
+306,amazon.com*123,231.23,Shopping,18/12/2025
+307,Water bill,407.64,Utilities,01/01/2026
+308,Water bill,260.66,Utilities,2025-12-28
+309,Elec  Bill  -  Jan,54.35,Utilities,2026-01-13
+310,gas station,273.11,Transport,"Dec 07, 2025"
+311,pharmacy - CVS,106.71,Health,2026-01-08
+312,meds...,416.97,Health,01-05-2026
+313,NETFLIX.COM,447.62,Entertainment,"Dec 07, 2025"
+314,steam games,461.65,Entertainment,10/01/2026
+315,Internet  Comcast,423.9,Utilities,2026-01-05
+316,amzn mktp,444.85,Shopping,26/12/2025
+317,meds...,435.08,Health,"Dec 10, 2025"
+318,Internet Comcast,395.77,Utilities,2025-12-22
+319,water bill,180.42,Utilities,09/01/2026
+320,Hospital bill,7.0,Health,2026-01-10
+321,cinema  tickets,426.19,Entertainment,12-07-2025
+322,UBER   123,129.55,Transport,"Dec 26, 2025"
+323,meds...,360.29,Health,"Jan 06, 2026"
+324,Doctor visit,258.66,Health,05/12/2025
+325,Gas station,120.21,Transport,01/01/2026
+326,pharmacy - CVS,467.77,Health,12-16-2025
+327,Pfizer meds,126.51,Health,"Jan 03, 2026"
+328,WAL-MART #456,177.75,Shopping,12-11-2025
+329,pharmacy - CVS,331.27,Health,"Jan 14, 2026"
+330,Mobile recharge,330.75,Utilities,"Dec 18, 2025"
+331,amzn mktp,490.81,Shopping,2025-12-19
+332,sttarbucks,314.01,Food,2026-01-02
+333,meds...,473.05,Health,"Jan 05, 2026"
+334,Netflix subscription,230.06,Entertainment,2025-12-18
+335,netflix.com,285.81,Entertainment,12-10-2025
+336,netflix.com,278.45,Entertainment,2026-01-01
+337,amzn mktp,472.32,Shopping,01-11-2026
+338,Lunch at MCD,85.24,Food,12-15-2025
+339,Target  store,264.86,Shopping,11/12/2025
+340,Train pass,477.36,Transport,09/01/2026
+341,Lunch at MCD,72.97,Food,12-17-2025
+342,Amazon.com*123,494.52,Shopping,08/12/2025
+343,Hospital bill,278.7,Health,12-31-2025
+344,Strbucks cofee,83.79,Food,2025-12-25
+345,Cinema tickets,168.31,Entertainment,"Jan 06, 2026"
+346,Electcity bill,79.3,Utilities,2025-12-08
+347,bill  for  power,144.71,Utilities,12-23-2025
+348,Dinner at Palace,453.62,Food,2025-12-10
+349,Gas  station,464.55,Transport,"Dec 17, 2025"
+350,Coffee!!,476.93,Food,2025-12-26
+351,Strbucks cofee,463.19,Food,01/01/2026
+352,Amzon prime sub,23.03,Shopping,"Dec 24, 2025"
+353,Cinema tickets,239.68,Entertainment,12-26-2025
+354,NETFLIX.COM,442.34,Entertainment,"Jan 15, 2026"
+355,Dinner  at  Palace,411.54,Food,"Jan 13, 2026"
+356,WAL-MART #456,191.07,Shopping,10/12/2025
+357,movie night,232.89,Entertainment,01-02-2026
+358,Target  store,266.67,Shopping,01-13-2026
+359,Internet Comcast,43.49,Utilities,12-15-2025
+360,Steam games,368.97,Entertainment,01-12-2026
+361,Gas station,106.46,Transport,2026-01-03
+362,Steam games,212.12,Entertainment,23/12/2025
+363,Water bill,141.43,Utilities,2026-01-04
+364,Amzon prime sub,209.31,Shopping,"Dec 06, 2025"
+365,Steam games,182.7,Entertainment,"Dec 14, 2025"
+366,Amzon prime sub,194.31,Shopping,12-31-2025
+367,netflix.com,357.7,Entertainment,2026-01-08
+368,Mobile recharge,421.14,Utilities,"Dec 16, 2025"
+369,bill for power,471.63,Utilities,"Jan 11, 2026"
+370,Petrol refill,371.87,Transport,"Dec 09, 2025"
+371,meds...,127.86,Health,"Dec 21, 2025"
+372,Uber ridee,333.28,Transport,12-24-2025
+373,Amazon.com*123,148.36,Shopping,12-14-2025
+374,meds...,166.31,Health,12-07-2025
+375,Hospital bill,294.59,Health,2025-12-26
+376,Dinner  at  Palace,445.47,Food,2026-01-04
+377,Subway sandwich,32.18,Food,"Dec 27, 2025"
+378,Internet Comcast,357.12,Utilities,"Jan 09, 2026"
+379,Gas station,453.27,Transport,2025-12-14
+380,target store,401.04,Shopping,2025-12-14
+381,petrol refill,69.67,Transport,2025-12-27
+382,Gas station,166.59,Transport,"Jan 13, 2026"
+383,Subway sandwich,272.55,Food,2025-12-25
+384,Strbucks cofee,465.91,Food,09/12/2025
+385,train pass,84.43,Transport,12-27-2025
+386,Mobile recharge,455.57,Utilities,2026-01-12
+387,pfizer meds,433.48,Health,12-28-2025
+388,Strbucks cofee,40.94,Food,12-27-2025
+389,steam games,141.49,Entertainment,12-07-2025
+390,Hospital bill,59.87,Health,2025-12-01
+391,Spotify,199.64,Entertainment,11/12/2025
+392,Bus ticket,450.53,Transport,"Dec 11, 2025"
+393,Groceries,157.35,Food,"Dec 14, 2025"
+394,WAL-MART #456,428.19,Shopping,"Dec 01, 2025"
+395,Cinema tickets,286.2,Entertainment,2026-01-09
+396,Gas station,223.77,Transport,12/12/2025
+397,Pfizer meds,283.53,Health,2026-01-14
+398,Pfizer meds,370.78,Health,"Dec 27, 2025"
+399,Target store,133.52,Shopping,16/12/2025
+400,Doctor  visit,415.18,Health,15/01/2026
+401,spotify,473.83,Entertainment,"Dec 29, 2025"
+402,Netflix subscription,335.48,Entertainment,"Dec 23, 2025"
+403,Pfizer meds,32.39,Health,12-26-2025
+404,Pfizer meds,119.12,Health,2025-12-05
+405,Coffee!!,310.95,Food,2025-12-15
+406,Elec Bill - Jan,388.19,Utilities,"Dec 16, 2025"
+407,Netflix subscription,465.31,Entertainment,03/12/2025
+408,meds...,265.72,Health,"Dec 10, 2025"
+409,pharmacy - CVS,203.91,Health,20/12/2025
+410,sttarbucks,354.27,Food,"Jan 06, 2026"
+411,bill for power,436.84,Utilities,11/01/2026
+412,amzn mktp,76.84,Shopping,04/12/2025
+413,Water bill,16.29,Utilities,12-24-2025
+414,Gas station,410.88,Transport,01-07-2026
+415,Amzon prime sub,68.89,Shopping,01/01/2026
+416,Pfizer meds,13.53,Health,"Jan 08, 2026"
+417,walmrt grocceries,48.05,Shopping,02/01/2026
+418,Groceries,447.64,Food,12-29-2025
+419,Gym membership,389.93,Health,2025-12-19
+420,uberrr,467.6,Transport,"Jan 05, 2026"
+421,petrol refill,210.71,Transport,18/12/2025
+422,Hospital bill,446.97,Health,28/12/2025
+423,Strbucks cofee,63.0,Food,"Dec 30, 2025"
+424,spotify,433.91,Entertainment,"Dec 26, 2025"
+425,Electcity bill,234.56,Utilities,09/01/2026
+426,pharmacy  -  CVS,5.55,Health,12-28-2025
+427,Lunch at MCD,48.97,Food,01-06-2026
+428,Cinema tickets,64.06,Entertainment,12-17-2025
+429,WAL-MART #456,54.8,Shopping,01-08-2026
+430,Target store,366.63,Shopping,2026-01-10
+431,Strbucks cofee,324.67,Food,12-05-2025
+432,Cinema tickets,239.85,Entertainment,"Jan 11, 2026"
+433,hospital bill,23.96,Health,"Dec 11, 2025"
+434,Subway sandwich,162.48,Food,"Dec 13, 2025"
+435,Coffee!!,261.53,Food,"Jan 12, 2026"
+436,Internet Comcast,326.76,Utilities,12-18-2025
+437,Coffee!!,106.45,Food,"Dec 05, 2025"
+438,Amzon prime sub,96.39,Shopping,12-22-2025
+439,Spotify,301.79,Entertainment,2026-01-11
+440,Train pass,495.83,Transport,24/12/2025
+441,Elec Bill - Jan,405.18,Utilities,06/01/2026
+442,Electcity bill,49.21,Utilities,"Dec 12, 2025"
+443,amzn mktp,460.51,Shopping,12-25-2025
+444,Target store,217.55,Shopping,2025-12-01
+445,UBER   123,170.77,Transport,"Dec 30, 2025"
+446,bill for power,119.51,Utilities,"Dec 21, 2025"
+447,pharmacy - CVS,70.06,Health,2025-12-14
+448,lunch at mcd,389.1,Food,20/12/2025
+449,amzn mktp,116.44,Shopping,2025-12-11
+450,strbucks cofee,97.04,Food,31/12/2025
+451,Bus ticket,335.9,Transport,2025-12-01
+452,Elec  Bill  -  Jan,312.65,Utilities,"Dec 14, 2025"
+453,spotify,352.56,Entertainment,"Dec 31, 2025"
+454,strbucks  cofee,423.44,Food,2026-01-06
+455,Dinner at Palace,364.92,Food,2026-01-14
+456,Gym membership,465.57,Health,15/01/2026
+457,Amzon prime sub,131.56,Shopping,2026-01-04
+458,movie night,440.61,Entertainment,"Jan 02, 2026"
+459,Uber ridee,188.88,Transport,2025-12-30
+460,meds...,435.72,Health,2025-12-11
+461,bill for power,496.1,Utilities,24/12/2025
+462,Cinema tickets,29.52,Entertainment,2026-01-10
+463,Cinema tickets,42.85,Entertainment,"Dec 21, 2025"
+464,Train pass,65.71,Transport,2025-12-05
+465,groceries,204.35,Food,01/12/2025
+466,Petrol refill,373.8,Transport,2025-12-19
+467,Train pass,277.21,Transport,12-04-2025
+468,amazon.com*123,107.18,Shopping,12-04-2025
+469,sttarbucks,436.1,Food,12-25-2025
+470,gas station,315.74,Transport,2025-12-23
+471,NETFLIX.COM,347.03,Entertainment,12-29-2025
+472,movie night,61.29,Entertainment,2026-01-10
+473,Walmrt grocceries,247.79,Shopping,2025-12-21
+474,WAL-MART #456,285.7,Shopping,12-03-2025
+475,NETFLIX.COM,138.49,Entertainment,"Dec 30, 2025"
+476,Groceries,207.5,Food,2025-12-30
+477,Groceries,134.73,Food,14/12/2025
+478,Internet  Comcast,277.73,Utilities,12-21-2025
+479,amzn mktp,159.28,Shopping,31/12/2025
+480,Water bill,238.8,Utilities,"Dec 30, 2025"
+481,Pfizer meds,365.32,Health,08/12/2025
+482,Spotify,410.7,Entertainment,2025-12-17
+483,train pass,113.1,Transport,2026-01-12
+484,pfizer meds,300.13,Health,01/12/2025
+485,steam games,200.71,Entertainment,2025-12-03
+486,NETFLIX.COM,486.78,Entertainment,01-05-2026
+487,WAL-MART #456,100.94,Shopping,27/12/2025
+488,Steam  games,132.47,Entertainment,"Jan 11, 2026"
+489,UBER      123,373.16,Transport,29/12/2025
+490,uberrr,72.5,Transport,12-30-2025
+491,Hospital bill,87.8,Health,2025-12-21
+492,lunch at mcd,329.26,Food,12-09-2025
+493,Strbucks cofee,209.86,Food,12-23-2025
+494,Electcity bill,298.29,Utilities,18/12/2025
+495,Spotify,489.94,Entertainment,22/12/2025
+496,Coffee!!,64.27,Food,"Dec 21, 2025"
+497,bill for power,194.63,Utilities,12/12/2025
+498,Hospital bill,353.19,Health,12-24-2025
+499,Cinema tickets,355.37,Entertainment,28/12/2025
+500,WAL-MART #456,299.02,Shopping,26/12/2025

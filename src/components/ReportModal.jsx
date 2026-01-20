@@ -39,7 +39,7 @@ export default function ReportModal({ isOpen, onClose, expenses, users, auth, cu
         };
 
         const currentEntries = periods[activePeriod] || [];
-        const expensesOnly = currentEntries.filter(e => e.type === 'expense');
+        const expensesOnly = currentEntries.filter(e => e.type === 'expense' || !e.type);
         const incomeOnly = currentEntries.filter(e => e.type === 'income');
 
         const totalExpense = expensesOnly.reduce((acc, curr) => acc + curr.amount, 0);
