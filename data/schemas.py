@@ -1,5 +1,5 @@
-from pydantic import BaseModel, Field, validator
-from datetime import date, datetime
+from pydantic import BaseModel, Field, field_validator
+from datetime import date as dt_date, datetime
 from typing import Optional
 
 
@@ -8,12 +8,13 @@ class ExpenseBase(BaseModel):
     description: str = Field(..., min_length=1, max_length=255, description="Expense description")
     amount: float = Field(..., gt=0, description="Expense amount (must be positive)")
     category: str = Field(..., min_length=1, max_length=100, description="Expense category")
-    date: date = Field(..., description="Expense date")
+    date: dt_date = Field(..., description="Expense date")
     type: str = Field(default="expense", description="Transaction type: 'expense' or 'income'")
     user_id: Optional[int] = Field(None, description="User ID who created the expense")
 
-    @validator('type')
-    def validate_type(cls, v):
+    @field_validator('type')
+    @classmethod
+    def validate_type(cls, v: str) -> str:
         if v not in ['expense', 'income']:
             raise ValueError("Type must be either 'expense' or 'income'")
         return v
@@ -24,12 +25,13 @@ class ExpenseCreate(BaseModel):
     description: str = Field(..., min_length=1, max_length=255)
     amount: float = Field(..., gt=0)
     category: Optional[str] = Field(None, min_length=1, max_length=100)
-    date: date
+    date: dt_date
     type: str = Field(default="expense")
     user_id: Optional[int] = None
 
-    @validator('type')
-    def validate_type(cls, v):
+    @field_validator('type')
+    @classmethod
+    def validate_type(cls, v: str) -> str:
         if v not in ['expense', 'income']:
             raise ValueError("Type must be either 'expense' or 'income'")
         return v
@@ -40,12 +42,13 @@ class ExpenseUpdate(BaseModel):
     description: Optional[str] = Field(None, min_length=1, max_length=255)
     amount: Optional[float] = Field(None, gt=0)
     category: Optional[str] = Field(None, min_length=1, max_length=100)
-    date: Optional[date] = None
+    date: Optional[dt_date] = None
     type: Optional[str] = None
     user_id: Optional[int] = None
 
-    @validator('type')
-    def validate_type(cls, v):
+    @field_validator('type')
+    @classmethod
+    def validate_type(cls, v: Optional[str]) -> Optional[str]:
         if v is not None and v not in ['expense', 'income']:
             raise ValueError("Type must be either 'expense' or 'income'")
         return v
@@ -61,7 +64,7 @@ class ExpenseResponse(ExpenseBase):
         from_attributes = True
         json_encoders = {
             datetime: lambda v: v.isoformat() if v else None,
-            date: lambda v: v.isoformat() if v else None
+            dt_date: lambda v: v.isoformat() if v else None
         }
 
 

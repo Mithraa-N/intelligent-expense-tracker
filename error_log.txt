@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\intelligent expense tracker\debug_import.py", line 7, in <module>
+    from data import schemas
+  File "C:\Users\HP\Desktop\intelligent expense tracker\data\schemas.py", line 6, in <module>
+    class ExpenseBase(BaseModel):
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\_internal\_model_construction.py", line 221, in __new__
+    set_model_fields(cls, config_wrapper=config_wrapper, ns_resolver=ns_resolver)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\_internal\_model_construction.py", line 544, in set_model_fields
+    fields, class_vars = collect_model_fields(cls, config_wrapper, ns_resolver, typevars_map=typevars_map)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\_internal\_fields.py", line 237, in collect_model_fields
+    field_info = FieldInfo_.from_annotated_attribute(ann_type, assigned_value, _source=AnnotationSource.CLASS)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\fields.py", line 396, in from_annotated_attribute
+    raise PydanticUserError(
+pydantic.errors.PydanticUserError: Error when building FieldInfo from annotated attribute. Make sure you don't have any field name clashing with a type annotation.
+
+For further information visit https://errors.pydantic.dev/2.11/u/unevaluable-type-annotation

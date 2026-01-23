@@ -34,6 +34,7 @@ import * as XLSX from 'xlsx';
 import Tesseract from 'tesseract.js';
 import ReportModal from '../components/ReportModal';
 import NotificationToast from '../components/NotificationToast';
+import ReceiptCameraScanner from '../components/ReceiptCameraScanner';
 import { api } from '../api';
 
 const CURRENCY_SYMBOLS = {
@@ -67,11 +68,20 @@ export default function Dashboard({ auth, onLogout }) {
     });
     const [users, setUsers] = useState(() => {
         const saved = localStorage.getItem('sh_users');
-        const parsed = saved ? JSON.parse(saved) : INITIAL_USERS;
+        let parsed = saved ? JSON.parse(saved) : INITIAL_USERS;
+        if (!Array.isArray(parsed) || parsed.length === 0) {
+            parsed = INITIAL_USERS;
+        }
         return parsed.map(u => ({ ...u, salary: u.salary || 0 }));
     });
 
-    const [currentUser, setCurrentUser] = useState(users[0]);
+    const [currentUser, setCurrentUser] = useState(users[0] || INITIAL_USERS[0]);
+
+    useEffect(() => {
+        if (!currentUser && users.length > 0) {
+            setCurrentUser(users[0]);
+        }
+    }, [users, currentUser]);
 
     const [expenses, setExpenses] = useState([]);
     const [isLoadingExpenses, setIsLoadingExpenses] = useState(true);
@@ -105,6 +115,7 @@ export default function Dashboard({ auth, onLogout }) {
 
     const fileInputRef = useRef(null);
     const ocrInputRef = useRef(null);
+    const [isCameraOpen, setIsCameraOpen] = useState(false);
 
     const addNotification = (type, title, message) => {
         setNotifications(prev => [...prev, { id: Date.now(), type, title, message }]);
@@ -153,8 +164,8 @@ export default function Dashboard({ auth, onLogout }) {
                     api.getAnomalies(),
                     api.getForecast(30)
                 ]);
-                setAiInsights(insightsRes);
-                setAnomalies(anomaliesRes);
+                setAiInsights(Array.isArray(insightsRes) ? insightsRes : []);
+                setAnomalies(Array.isArray(anomaliesRes) ? anomaliesRes : []);
                 setForecast(forecastRes);
             } catch (err) {
                 console.error("Failed to fetch AI data", err);
@@ -480,24 +491,41 @@ export default function Dashboard({ auth, onLogout }) {
         reader.readAsBinaryString(file);
     };
 
-    const handleOCR = async (e) => {
-        const file = e.target.files[0];
+    const processReceiptImage = async (file) => {
         if (!file) return;
         setIsProcessing(true);
         try {
             const result = await Tesseract.recognize(file, 'eng');
             const text = result.data.text;
+
+            // Simple extraction logic
             const amountMatch = text.match(/[\d]{1,}\.[\d]{2}/);
+            // Try to find a date
+            // const dateMatch = text.match(/\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4}/);
+
             setNewExpense(prev => ({
                 ...prev,
-                description: text.split('\n')[0]?.substring(0, 20) || "Scanned",
+                description: text.split('\n')[0]?.substring(0, 20) || "Scanned Receipt",
                 amount: amountMatch ? parseFloat(amountMatch[0]) : ""
             }));
 
             setActiveTab('manual');
             addNotification('success', 'OCR Success', 'Scanned receipt details found.');
-        } catch (err) { addNotification('error', 'OCR Failed', 'Could not read text from image.'); }
+        } catch (err) {
+            console.error(err);
+            addNotification('error', 'OCR Failed', 'Could not read text from image.');
+        }
         setIsProcessing(false);
+    };
+
+    const handleOCR = (e) => {
+        const file = e.target.files[0];
+        processReceiptImage(file);
+    };
+
+    const handleCameraCapture = (file) => {
+        setIsCameraOpen(false);
+        processReceiptImage(file);
     };
 
     const deleteExpense = async (id) => {
@@ -1055,10 +1083,18 @@ export default function Dashboard({ auth, onLogout }) {
                                     </div>
                                 )}
                                 {activeTab === 'ocr' && (
-                                    <div style={{ textAlign: 'center' }}>
-                                        <Camera size={40} style={{ marginBottom: '1rem' }} />
+                                    <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                                        <Camera size={40} style={{ margin: '0 auto' }} />
                                         <input type="file" ref={ocrInputRef} onChange={handleOCR} style={{ display: 'none' }} />
-                                        <button onClick={() => ocrInputRef.current.click()} style={{ width: '100%', padding: '1rem', borderRadius: '8px', background: 'var(--primary)', border: 'none', color: 'white' }}>{isProcessing ? 'Analyzing...' : 'Scan Receipt'}</button>
+                                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                                            <button onClick={() => setIsCameraOpen(true)} style={{ padding: '1rem', borderRadius: '8px', background: 'var(--primary)', border: 'none', color: 'white', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+                                                <Camera size={18} /> Use Camera
+                                            </button>
+                                            <button onClick={() => ocrInputRef.current.click()} style={{ padding: '1rem', borderRadius: '8px', background: 'rgba(255,255,255,0.1)', border: '1px solid var(--border)', color: 'white', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+                                                <FileSpreadsheet size={18} /> Upload Image
+                                            </button>
+                                        </div>
+                                        {isProcessing && <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>Analyzing receipt...</p>}
                                     </div>
                                 )}
                                 <button onClick={() => setIsAddModalOpen(false)} style={{ width: '100%', marginTop: '1rem', background: 'none', border: 'none', color: 'var(--text-dim)', cursor: 'pointer' }}>Cancel</button>
@@ -1136,6 +1172,13 @@ export default function Dashboard({ auth, onLogout }) {
 
                 <NotificationToast notifications={notifications} removeNotification={removeNotification} />
             </AnimatePresence>
+
+            {isCameraOpen && (
+                <ReceiptCameraScanner
+                    onCapture={handleCameraCapture}
+                    onCancel={() => setIsCameraOpen(false)}
+                />
+            )}
         </div>
     );
 }

@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Query, status, Depends
 from typing import List, Optional
 from sqlalchemy.orm import Session
-from datetime import date as date_type
+from datetime import date
 
 from data.schemas import ExpenseCreate, ExpenseUpdate, ExpenseResponse
 from database import get_db
@@ -82,8 +82,8 @@ async def get_expenses(
     category: Optional[str] = Query(None, description="Filter by category"),
     type: Optional[str] = Query(None, description="Filter by type (expense/income)"),
     user_id: Optional[int] = Query(None, description="Filter by user ID"),
-    start_date: Optional[date_type] = Query(None, description="Filter by start date"),
-    end_date: Optional[date_type] = Query(None, description="Filter by end date"),
+    start_date: Optional[date] = Query(None, description="Filter by start date"),
+    end_date: Optional[date] = Query(None, description="Filter by end date"),
     db: Session = Depends(get_db)
 ):
     """
